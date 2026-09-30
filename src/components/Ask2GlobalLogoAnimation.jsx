@@ -41,24 +41,23 @@ export default function Ask2GlobalLogoAnimation() {
           <ellipse cx="50" cy="50" rx="34" ry="48" fill="none" stroke="currentColor" strokeWidth="0.5" />
         </svg>
 
-        {/* Center Logo Container */}
+        {/* Center Logo Container - ROUND SHAPE UPDATED */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-black/90 p-1.5 border border-amber-500/50 shadow-xl shadow-amber-500/30 flex items-center justify-center overflow-hidden">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-black/90 p-1.5 border-2 border-amber-500/60 shadow-[0_0_25px_rgba(245,158,11,0.4)] flex items-center justify-center overflow-hidden">
             <img 
               src={ask2Logo} 
               alt="ASK2 Global Logo" 
-              className="w-full h-full object-contain rounded-xl"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
         </div>
       </div>
 
-      {/* Orbiting Ring with High-Visibility Gold Text (Airplane Removed) */}
+      {/* Orbiting Ring with Text (Gap Filled & Spacing Adjusted) */}
       {phase >= 3 && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="relative w-[340px] h-[340px] sm:w-[400px] sm:h-[400px]">
             
-            {/* SVG Curved Path with High Contrast Text */}
             <svg 
               className={`w-full h-full transition-opacity duration-1000 ${
                 phase >= 4 ? 'opacity-100' : 'opacity-0'
@@ -72,7 +71,7 @@ export default function Ask2GlobalLogoAnimation() {
                   d="M 150, 150 m -120, 0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"
                 />
                 
-                {/* Ultra High-Visibility Metallic Gold Text Gradient */}
+                {/* Metallic Gold Text Gradient */}
                 <linearGradient id="highVisGold" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#fff7ed" />
                   <stop offset="35%" stopColor="#fef08a" />
@@ -80,10 +79,10 @@ export default function Ask2GlobalLogoAnimation() {
                   <stop offset="100%" stopColor="#fbbf24" />
                 </linearGradient>
 
-                {/* Text Outer Shadow Filter for Maximum Contrast */}
+                {/* Text Shadow Filter */}
                 <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="2.5" floodColor="#000000" floodOpacity="0.9" />
-                  <feDropShadow dx="0" dy="0" stdDeviation="4" floodColor="#f59e0b" floodOpacity="0.8" />
+                  <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="#000000" floodOpacity="0.95" />
+                  <feDropShadow dx="0" dy="0" stdDeviation="3.5" floodColor="#f59e0b" floodOpacity="0.75" />
                 </filter>
               </defs>
 
@@ -98,17 +97,17 @@ export default function Ask2GlobalLogoAnimation() {
                 strokeDasharray="4 4"
               />
 
-              {/* Rotating High-Contrast Company Name */}
-              <g className="animate-[spin_18s_linear_infinite] origin-center">
+              {/* Seamlessly Filled Circular Rotating Text */}
+              <g className="animate-[spin_20s_linear_infinite] origin-center">
                 <text 
-                  fontSize="11.5" 
-                  fontWeight="bold" 
+                  fontSize="9.8" 
+                  fontWeight="800" 
                   fill="url(#highVisGold)" 
                   filter="url(#textGlow)"
-                  className="uppercase font-mono tracking-[0.24em]"
+                  className="uppercase font-mono tracking-[0.18em]"
                 >
                   <textPath href="#orbitPath" startOffset="0%">
-                    ★ ASK2GLOBAL PRIVATE LIMITED  ★ ASK2GLOBAL PRIVATE LIMITED ★ ASK2GLOBAL PRIVATE LIMITED
+                     ASK2 GLOBAL PRIVATE LIMITED ★ ASK MORE • INNOVATE SMARTER • TRADE GLOBAL ★ ASK2 GLOBAL PRIVATE LIMITED ★ ASK MORE • INNOVATE SMARTER • TRADE GLOBAL
                   </textPath>
                 </text>
               </g>
