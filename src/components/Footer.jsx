@@ -50,22 +50,26 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Core Divisions */}
+          {/* Core Divisions - Expanded List */}
           <div>
             <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
               <Building className="w-3.5 h-3.5 text-amber-400" />
               <span>Core Divisions</span>
             </h4>
-            <ul className="space-y-3 text-[12px]">
+            <ul className="space-y-2.5 text-[12px]">
               {[
                 { name: 'B2B Commodity Desk', href: '#products' },
                 { name: 'State Procurement Portal', href: '#tenders' },
                 { name: 'Subcontractor Onboarding', href: '#tenders' },
+                { name: 'Global Supply Chain', href: '#products' },
+                { name: 'Infrastructure Tenders', href: '#tenders' },
+                { name: 'Government e-Marketplace ', href: '#tenders' },
+                { name: 'Corporate Joint Ventures', href: '#contact' },
               ].map((item, idx) => (
                 <li key={idx}>
                   <a 
                     href={item.href} 
-                    className="text-zinc-400 hover:text-white transition-all duration-300 flex items-center gap-2 group/link"
+                    className="text-zinc-400 hover:text-amber-300 transition-all duration-300 flex items-center gap-2 group/link"
                   >
                     <ArrowRight className="w-3 h-3 text-amber-500/50 group-hover/link:text-amber-400 group-hover/link:translate-x-1 transition-all" />
                     <span className="group-hover/link:translate-x-0.5 transition-all">{item.name}</span>
