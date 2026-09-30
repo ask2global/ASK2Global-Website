@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, ShieldCheck, ExternalLink, ArrowRight, Building, FileText, Sparkles } from 'lucide-react';
-// Assets folder se logo import karein (path apne project structure ke acc. verify kar lein)
+// Assets folder path verify kar lein
 import logoImg from '../assets/ask2 logo 2.jpeg'; 
 
 export default function Footer() {
@@ -18,20 +18,23 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="space-y-5 group">
-            <div className="flex items-center gap-3">
-              {/* Replacing A2G text div with Logo Image */}
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-amber-500/20 transition-all duration-500 group-hover:scale-105 group-hover:shadow-amber-500/40">
-                <img 
-                  src={logoImg} 
-                  alt="ASK2 GLOBAL Logo" 
-                  className="w-full h-full object-cover object-center"
-                />
+            <div className="flex items-center gap-4">
+              {/* Logo Box - Prominent Size & High Glow */}
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_35px_rgba(245,158,11,0.5)] shrink-0">
+                <div className="w-full h-full bg-black rounded-[14px] overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={logoImg} 
+                    alt="ASK2 GLOBAL Logo" 
+                    className="w-full h-full object-contain p-1 transform transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
               </div>
+
               <div>
-                <span className="font-extrabold text-white text-sm tracking-tight block group-hover:text-amber-300 transition-colors">
+                <span className="font-black text-white text-base sm:text-lg tracking-tight block group-hover:text-amber-300 transition-colors leading-snug">
                   ASK2 GLOBAL
                 </span>
-                <span className="text-[10px] text-zinc-500 font-mono tracking-widest uppercase block -mt-1">
+                <span className="text-[11px] text-amber-400/80 font-mono tracking-widest uppercase block mt-0.5 font-semibold">
                   Pvt. Ltd.
                 </span>
               </div>
