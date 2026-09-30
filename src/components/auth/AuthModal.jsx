@@ -7,7 +7,7 @@ import EmployeeLogin from './EmployeeLogin';
 
 const TABS = [
   { id: 'vendor', label: 'Vendor Signup', icon: Building2 },
-  { id: 'customer', label: 'Customer Signup', icon: User },
+  { id: 'customer', label: 'Buyer Signup', icon: User },
   { id: 'employee', label: 'Employee Access', icon: ShieldCheck },
 ];
 
@@ -102,8 +102,8 @@ export default function AuthModal({ onClose }) {
         </button>
       </div>
 
-      {/* Centered Scrollable Workspace */}
-      <div className="flex-1 overflow-y-auto px-4 py-8 flex justify-center items-start sm:items-center">
+      {/* Centered Scrollable Workspace - Hidden Scrollbar applied */}
+      <div className="flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-4 py-8 flex justify-center items-start sm:items-center">
         <div className="w-full max-w-lg bg-zinc-950 border border-amber-500/30 rounded-3xl p-6 shadow-2xl shadow-amber-500/5">
           
           {/* Custom Tabs */}
