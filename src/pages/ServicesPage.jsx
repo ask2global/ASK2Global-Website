@@ -375,7 +375,7 @@ export default function ServicesPage({ onContactClick }) {
             {/* Core Node */}
             <div className="col-span-2 sm:col-span-3 lg:col-span-5 flex justify-center mb-4">
               <div className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500/20 via-amber-400/10 to-amber-500/20 border-2 border-amber-400/80 shadow-[0_0_25px_rgba(245,158,11,0.25)] text-center">
-                <span className="font-extrabold text-base sm:text-lg text-amber-300 tracking-wider">ASK2GLOBAL CENTRAL ECOSYSTEM</span>
+                <span className="font-extrabold text-base sm:text-lg text-amber-300 tracking-wider">ASK2 GLOBAL CENTRAL ECOSYSTEM</span>
               </div>
             </div>
 
