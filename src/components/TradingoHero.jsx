@@ -53,7 +53,7 @@ export default function TradingoHero() {
       </div>
 
       {/* Quick Metric Ticker */}
-      <div className="w-full border-t border-amber-500/30 py-4">
+       { /*<div className="w-full border-t border-amber-500/30 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:divide-x md:divide-amber-500/20">
             
@@ -81,7 +81,7 @@ export default function TradingoHero() {
               <div className="p-2 text-amber-400">
                 <Zap className="w-4 h-4" />
               </div>
-              <div>
+            <div>
                 <span className="text-lg font-black font-mono text-white tracking-tight">0%</span>
                 <span className="text-[11px] text-slate-400 ml-2 font-medium uppercase tracking-wider">Transaction Fee</span>
               </div>
@@ -89,7 +89,7 @@ export default function TradingoHero() {
 
           </div>
         </div>
-      </div>
+      </div>*/}
     </section>
   );
 }
