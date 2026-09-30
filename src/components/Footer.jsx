@@ -1,9 +1,19 @@
 import React from 'react';
-import { Mail, ShieldCheck, ExternalLink, ArrowRight, Building, FileText, Sparkles } from 'lucide-react';
+import { Mail, ShieldCheck, ExternalLink, ArrowRight, Building, FileText, Sparkles, Briefcase } from 'lucide-react';
 // Assets folder path verify kar lein
 import logoImg from '../assets/ask2 logo 2.jpeg'; 
 
 export default function Footer() {
+  const services = [
+    { name: 'Bulk Commodity Supply', href: '#products' },
+    { name: 'Tender Execution', href: '#tenders' },
+    { name: 'GeM Portal Bidding', href: '#tenders' },
+    { name: 'Vendor Empanels', href: '#tenders' },
+    { name: 'Logistics Support', href: '#products' },
+    { name: 'Quality Inspection', href: '#services' },
+    { name: 'Import & Export', href: '#products' },
+  ];
+
   return (
     <footer 
       id="footer" 
@@ -14,13 +24,14 @@ export default function Footer() {
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:20px_20px]" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        {/* 5-Column Grid Breakdown */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           
           {/* Brand Info */}
-          <div className="space-y-5 group">
-            <div className="flex items-center gap-4">
+          <div className="space-y-5 group sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-3">
               {/* Logo Box - Prominent Size & High Glow */}
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_35px_rgba(245,158,11,0.5)] shrink-0">
+              <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_35px_rgba(245,158,11,0.5)] shrink-0">
                 <div className="w-full h-full bg-black rounded-[14px] overflow-hidden flex items-center justify-center">
                   <img 
                     src={logoImg} 
@@ -50,7 +61,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Core Divisions - Expanded List */}
+          {/* Core Divisions */}
           <div>
             <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
               <Building className="w-3.5 h-3.5 text-amber-400" />
@@ -63,7 +74,7 @@ export default function Footer() {
                 { name: 'Subcontractor Onboarding', href: '#tenders' },
                 { name: 'Global Supply Chain', href: '#products' },
                 { name: 'Infrastructure Tenders', href: '#tenders' },
-                { name: 'Government e-Marketplace ', href: '#tenders' },
+                { name: 'Government e-Marketplace', href: '#tenders' },
                 { name: 'Corporate Joint Ventures', href: '#contact' },
               ].map((item, idx) => (
                 <li key={idx}>
@@ -72,14 +83,35 @@ export default function Footer() {
                     className="text-zinc-400 hover:text-amber-300 transition-all duration-300 flex items-center gap-2 group/link"
                   >
                     <ArrowRight className="w-3 h-3 text-amber-500/50 group-hover/link:text-amber-400 group-hover/link:translate-x-1 transition-all" />
-                    <span className="group-hover/link:translate-x-0.5 transition-all">{item.name}</span>
+                    <span className="group-hover/link:translate-x-0.5 transition-all truncate">{item.name}</span>
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Statutory */}
+          {/* Our Services Section */}
+          <div>
+            <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
+              <Briefcase className="w-3.5 h-3.5 text-amber-400" />
+              <span>Our Services</span>
+            </h4>
+            <ul className="space-y-2.5 text-[12px]">
+              {services.map((item, idx) => (
+                <li key={idx}>
+                  <a 
+                    href={item.href} 
+                    className="text-zinc-400 hover:text-amber-300 transition-all duration-300 flex items-center gap-2 group/link"
+                  >
+                    <ArrowRight className="w-3 h-3 text-amber-500/50 group-hover/link:text-amber-400 group-hover/link:translate-x-1 transition-all" />
+                    <span className="group-hover/link:translate-x-0.5 transition-all truncate">{item.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Statutory Compliance */}
           <div>
             <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
               <FileText className="w-3.5 h-3.5 text-slate-300" />
