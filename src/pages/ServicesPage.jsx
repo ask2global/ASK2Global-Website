@@ -37,7 +37,7 @@ const servicesData = [
   },
   {
     id: '02',
-    title: 'Listing with Financial Document Provider',
+    title: 'Legal and Financial Prepernes',
     tag: 'FINANCIAL DOCUMENTATION',
     icon: FileCheck2,
     description: 'Support for business listings and financial documentation requirements through relevant financial document service providers.',
@@ -225,14 +225,37 @@ export default function ServicesPage({ onContactClick }) {
             <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
               
               {/* Outer Glow Ring */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-500/20 to-transparent blur-3xl" />
-              
-              {/* Center Logo Node - Replaced A2G Globe Icon with Actual Image Logo */}
-              <div className="relative w-32 h-32 rounded-full bg-black/90 border-2 border-amber-500/50 shadow-[0_0_50px_rgba(245,158,11,0.35)] flex items-center justify-center p-2 z-10 overflow-hidden">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-500/20 to-transparent blur-3xl pointer-events-none" />
+
+              {/* SVG Connecting Lines (Centered behind logo) */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible">
+                {servicesData.map((s, idx) => {
+                  const angle = (idx * 360) / servicesData.length;
+                  const radius = 150; // px
+                  const x = radius * Math.cos((angle * Math.PI) / 180);
+                  const y = radius * Math.sin((angle * Math.PI) / 180);
+
+                  return (
+                    <line 
+                      key={s.id}
+                      x1="50%" 
+                      y1="50%" 
+                      x2={`calc(50% + ${x}px)`} 
+                      y2={`calc(50% + ${y}px)`} 
+                      stroke="rgba(245, 158, 11, 0.35)" 
+                      strokeWidth="1.5" 
+                      strokeDasharray="4 4"
+                    />
+                  );
+                })}
+              </svg>
+
+              {/* Center Logo Node - Perfect Round Frame & Full Aspect Cover */}
+              <div className="relative w-32 h-32 rounded-full bg-black border-2 border-amber-500/60 shadow-[0_0_50px_rgba(245,158,11,0.4)] flex items-center justify-center p-1.5 z-20 overflow-hidden shrink-0">
                 <img 
                   src={ask2Logo} 
                   alt="ASK2 Global Logo" 
-                  className="w-full h-full object-contain rounded-full"
+                  className="w-full h-full object-cover rounded-full"
                 />
               </div>
 
@@ -244,42 +267,28 @@ export default function ServicesPage({ onContactClick }) {
                 const y = radius * Math.sin((angle * Math.PI) / 180);
 
                 return (
-                  <React.Fragment key={s.id}>
-                    {/* SVG Connecting Line */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
-                      <line 
-                        x1="50%" 
-                        y1="50%" 
-                        x2={`calc(50% + ${x}px)`} 
-                        y2={`calc(50% + ${y}px)`} 
-                        stroke="rgba(245, 158, 11, 0.3)" 
-                        strokeWidth="1.5" 
-                        strokeDasharray="4 4"
-                      />
-                    </svg>
-
-                    {/* Service Node */}
-                    <div 
-                      style={{ transform: `translate(${x}px, ${y}px)` }}
-                      className="absolute p-2 rounded-xl bg-neutral-900/90 border border-amber-500/40 text-amber-300 shadow-md shadow-amber-500/10 hover:scale-110 transition-transform duration-300 group cursor-pointer z-20"
-                      title={s.title}
-                      onClick={() => setActiveModalService(s)}
-                    >
-                      <s.icon className="w-4 h-4 text-amber-400" />
-                      
-                      {/* Node Label Tooltip */}
-                      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded bg-black/90 border border-amber-500/30 text-[10px] font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
-                        {s.title}
-                      </span>
-                    </div>
-                  </React.Fragment>
+                  <div 
+                    key={s.id}
+                    style={{ transform: `translate(${x}px, ${y}px)` }}
+                    className="absolute p-2.5 rounded-xl bg-neutral-900/90 border border-amber-500/40 text-amber-300 shadow-md shadow-amber-500/10 hover:scale-110 transition-transform duration-300 group cursor-pointer z-30"
+                    title={s.title}
+                    onClick={() => setActiveModalService(s)}
+                  >
+                    <s.icon className="w-4 h-4 text-amber-400" />
+                    
+                    {/* Node Label Tooltip */}
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-md bg-black/95 border border-amber-500/40 text-[10px] font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-40">
+                      {s.title}
+                    </span>
+                  </div>
                 );
               })}
 
               {/* Ecosystem Badge Tag */}
-              <div className="absolute -bottom-2 bg-black/90 border border-amber-500/40 px-4 py-1.5 rounded-full text-[11px] font-mono font-bold text-amber-300 tracking-wider uppercase shadow-lg backdrop-blur-md">
+              <div className="absolute -bottom-2 bg-black/95 border border-amber-500/50 px-4 py-1.5 rounded-full text-[11px] font-mono font-bold text-amber-300 tracking-wider uppercase shadow-lg backdrop-blur-md z-30">
                 ONE BUSINESS ECOSYSTEM
               </div>
+
             </div>
           </div>
 
