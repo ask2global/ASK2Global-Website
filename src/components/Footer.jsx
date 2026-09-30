@@ -1,5 +1,7 @@
 import React from 'react';
 import { Mail, ShieldCheck, ExternalLink, ArrowRight, Building, FileText, Sparkles } from 'lucide-react';
+// Assets folder se logo import karein (path apne project structure ke acc. verify kar lein)
+import logoImg from '../assets/ask2 logo 2.jpeg'; 
 
 export default function Footer() {
   return (
@@ -17,12 +19,13 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="space-y-5 group">
             <div className="flex items-center gap-3">
-              <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 p-[1px] shadow-lg shadow-amber-500/20 transition-all duration-500 group-hover:scale-105 group-hover:shadow-amber-500/40">
-                <div className="w-full h-full bg-black rounded-[11px] flex items-center justify-center">
-                  <span className="font-black text-xs tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-500">
-                    A2G
-                  </span>
-                </div>
+              {/* Replacing A2G text div with Logo Image */}
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-amber-500/20 transition-all duration-500 group-hover:scale-105 group-hover:shadow-amber-500/40">
+                <img 
+                  src={logoImg} 
+                  alt="ASK2 GLOBAL Logo" 
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <div>
                 <span className="font-extrabold text-white text-sm tracking-tight block group-hover:text-amber-300 transition-colors">
@@ -128,7 +131,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-4">
           <div className="flex items-center gap-2 text-zinc-400">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <p>© 2026 ASK2 Global Private Limited. All rights reserved.</p>
+            <p>© 2025 ASK2Global Private Limited. All rights reserved.</p>
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline text-zinc-700">•</span>
