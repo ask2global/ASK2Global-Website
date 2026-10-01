@@ -14,7 +14,8 @@ export default function App() {
   const [currentView, setCurrentView] = useState('all');
 
   return (
-    <div className="relative min-h-screen w-full bg-black text-slate-100 font-sans selection:bg-amber-500 selection:text-black overflow-x-hidden">
+    /* REMOVED 'overflow-x-hidden' FROM HERE TO ENABLE STICKY NAVBAR */
+    <div className="relative min-h-screen w-full bg-black text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
       
       {/* Full Website Fixed Background Image Layer */}
       <div 
