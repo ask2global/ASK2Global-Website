@@ -137,7 +137,7 @@ export default function EcommercePage({ setCurrentView }) {
               <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.08] text-white">
                 Something Big Is Coming.{' '}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 drop-shadow-[0_0_25px_rgba(245,158,11,0.3)]">
-                  Coming Soon
+                  Coming Soon....
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-light pt-2">
