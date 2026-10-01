@@ -85,7 +85,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
         >
           <div className="flex flex-col">
             <span className="font-black text-lg tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 group-hover:text-amber-300 transition-colors drop-shadow-[0_2px_10px_rgba(245,158,11,0.3)]">
-              ASK 2 GLOBAL Pvt. Ltd.
+              ASK 2 GLOBAL PVT. LTD.
             </span>
           </div>
         </button>
