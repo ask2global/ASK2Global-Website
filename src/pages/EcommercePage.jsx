@@ -17,10 +17,7 @@ import {
   Send,
   Package,
   TrendingUp,
-  MapPin,
-  Building2,
-  FileText,
-  ShoppingCart
+  MapPin
 } from 'lucide-react';
 
 // LAUNCH DATE CONFIGURATION
@@ -100,9 +97,29 @@ export default function EcommercePage({ setCurrentView }) {
     }
   ];
 
+  // Dynamic Class for Animated Golden Hover Cards
+  const goldenAnimatedCardStyle = `
+    relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1.5 cursor-pointer border
+    bg-[linear-gradient(110deg,#e2e8f0,45%,#ffffff,55%,#cbd5e1)] bg-[length:200%_100%] text-slate-950 font-black border-slate-300
+    shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.05)]
+    hover:bg-[linear-gradient(110deg,#f59e0b,35%,#fef08a,50%,#d97706)] hover:bg-[length:200%_100%] hover:animate-gold-shimmer hover:border-amber-200
+    hover:shadow-[0_8px_0_#78350f,0_15px_30px_rgba(245,158,11,0.4)]
+  `;
+
   return (
     <div className="min-h-screen bg-[#050505] text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
       
+      {/* Custom Keyframe Animation for Golden Background Wave */}
+      <style>{`
+        @keyframes goldShimmer {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+        .animate-gold-shimmer {
+          animation: goldShimmer 3.5s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-[90vh] flex flex-col justify-between overflow-hidden pt-8 pb-16 px-4 sm:px-6 lg:px-8 border-b border-amber-500/20 bg-gradient-to-b from-[#050816] via-[#050505] to-[#050505]">
         
@@ -263,14 +280,14 @@ export default function EcommercePage({ setCurrentView }) {
             return (
               <div 
                 key={cat.id}
-                className="group relative rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between cursor-pointer border text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_8px_0_#92400e,0_15px_30px_rgba(245,158,11,0.4)]"
+                className={`group ${goldenAnimatedCardStyle} flex flex-col justify-between`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <span className="font-mono text-xs font-black tracking-widest text-slate-800 group-hover:text-amber-950">
                       {cat.id}
                     </span>
-                    <span className="text-[10px] font-mono font-bold tracking-wider text-slate-950 bg-white/60 border border-slate-300 group-hover:bg-amber-950/20 group-hover:border-amber-950/40 group-hover:text-amber-950 px-2.5 py-1 rounded-full">
+                    <span className="text-[10px] font-mono font-bold tracking-wider text-slate-950 bg-white/70 border border-slate-300 group-hover:bg-amber-950/20 group-hover:border-amber-950/40 group-hover:text-amber-950 px-2.5 py-1 rounded-full backdrop-blur-sm">
                       Coming Soon
                     </span>
                   </div>
@@ -279,7 +296,7 @@ export default function EcommercePage({ setCurrentView }) {
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-black text-slate-950 group-hover:text-slate-950 transition-colors mb-2">
+                  <h3 className="text-xl font-black text-slate-950 transition-colors mb-2">
                     {cat.title}
                   </h3>
 
@@ -288,7 +305,7 @@ export default function EcommercePage({ setCurrentView }) {
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-400/60 group-hover:border-amber-600/40 flex items-center justify-between text-[11px] font-mono text-slate-800 group-hover:text-amber-950 font-bold">
+                <div className="pt-6 mt-6 border-t border-slate-400/60 group-hover:border-amber-700/40 flex items-center justify-between text-[11px] font-mono text-slate-800 group-hover:text-amber-950 font-bold">
                   <span>Verified Supply Chain</span>
                   <span>Catalog Locked →</span>
                 </div>
@@ -303,7 +320,7 @@ export default function EcommercePage({ setCurrentView }) {
       {/* ================= GLOBAL COMMERCE SECTION ================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
-        <div className="group relative rounded-3xl p-8 sm:p-12 overflow-hidden transition-all duration-300 text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border border-slate-200 shadow-[0_8px_0_#475569,0_15px_30px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_10px_0_#92400e,0_20px_40px_rgba(245,158,11,0.4)]">
+        <div className={`group ${goldenAnimatedCardStyle} p-8 sm:p-12 overflow-hidden`}>
           
           <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
             <span className="text-xs font-mono tracking-widest text-slate-800 group-hover:text-amber-950 uppercase font-black">
@@ -372,7 +389,7 @@ export default function EcommercePage({ setCurrentView }) {
             return (
               <div 
                 key={idx} 
-                className="group p-8 rounded-2xl transition-all text-left space-y-4 cursor-pointer border text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_8px_0_#92400e,0_15px_30px_rgba(245,158,11,0.4)] hover:-translate-y-1.5"
+                className={`group ${goldenAnimatedCardStyle} text-left space-y-4`}
               >
                 <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
                   <Icon className="w-6 h-6" />
@@ -394,7 +411,7 @@ export default function EcommercePage({ setCurrentView }) {
       {/* ================= EMAIL NOTIFICATION FORM ================= */}
       <section id="notify-section" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
-        <div className="group max-w-2xl mx-auto text-center space-y-6 p-8 sm:p-12 rounded-3xl transition-all duration-300 border text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 shadow-[0_8px_0_#475569,0_15px_30px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_10px_0_#92400e,0_20px_40px_rgba(245,158,11,0.4)]">
+        <div className={`group ${goldenAnimatedCardStyle} max-w-2xl mx-auto text-center space-y-6 p-8 sm:p-12`}>
           <div className="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 mx-auto group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
             <Mail className="w-6 h-6" />
           </div>
