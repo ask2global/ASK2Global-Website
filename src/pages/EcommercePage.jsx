@@ -24,19 +24,14 @@ import {
 } from 'lucide-react';
 
 // LAUNCH DATE CONFIGURATION
-// Set to a date string like "2026-12-31T00:00:00" or leave null for "LAUNCH DATE TO BE ANNOUNCED"
 const LAUNCH_DATE = null; 
 
 export default function EcommercePage({ setCurrentView }) {
-  // Countdown Timer State
   const [timeLeft, setTimeLeft] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' });
-  
-  // Email Form State
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Countdown Calculation
   useEffect(() => {
     if (!LAUNCH_DATE) return;
 
@@ -67,7 +62,6 @@ export default function EcommercePage({ setCurrentView }) {
     return () => clearInterval(interval);
   }, []);
 
-  // Email Submit Handler
   const handleNotifySubmit = (e) => {
     e.preventDefault();
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
@@ -109,22 +103,16 @@ export default function EcommercePage({ setCurrentView }) {
   return (
     <div className="min-h-screen bg-[#050505] text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
       
-      {/* =========================================================================
-          HERO SECTION
-         ========================================================================= */}
+      {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-[90vh] flex flex-col justify-between overflow-hidden pt-8 pb-16 px-4 sm:px-6 lg:px-8 border-b border-amber-500/20 bg-gradient-to-b from-[#050816] via-[#050505] to-[#050505]">
         
-        {/* Background Ambient Effects */}
         <div className="absolute top-1/4 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none animate-pulse" />
         <div className="absolute top-1/3 right-10 w-[30rem] h-[30rem] bg-yellow-500/10 rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#D4AF37_1px,transparent_1px),linear-gradient(to_bottom,#D4AF37_1px,transparent_1px)] bg-[size:36px_36px]" />
 
         <div className="max-w-7xl mx-auto my-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-12">
           
-          {/* Left Column: Headline & Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
-            
-            {/* Top Small Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-neutral-900/90 border border-amber-500/40 shadow-[0_0_20px_rgba(212,175,55,0.2)] backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" style={{ animationDuration: '6s' }} />
               <span className="text-xs font-mono font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase">
@@ -132,7 +120,6 @@ export default function EcommercePage({ setCurrentView }) {
               </span>
             </div>
 
-            {/* Main Headline */}
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.08] text-white">
                 Something Big Is Coming.{' '}
@@ -145,7 +132,6 @@ export default function EcommercePage({ setCurrentView }) {
               </p>
             </div>
 
-            {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4 w-full sm:w-auto">
               <a
                 href="#notify-section"
@@ -166,7 +152,6 @@ export default function EcommercePage({ setCurrentView }) {
               </button>
             </div>
 
-            {/* Countdown Component */}
             <div className="w-full pt-8 border-t border-neutral-800/80">
               <span className="text-[10px] font-mono tracking-widest text-amber-400/80 uppercase font-bold block mb-3">
                 {LAUNCH_DATE ? 'Official Launch Countdown' : 'Launch Status'}
@@ -205,18 +190,12 @@ export default function EcommercePage({ setCurrentView }) {
 
           </div>
 
-          {/* Right Column: Premium 3D/Glass E-Commerce Visual */}
           <div className="lg:col-span-5 flex justify-center items-center relative">
-            
             <div className="relative w-full max-w-[460px] aspect-square flex items-center justify-center">
-              
-              {/* Outer Golden Orbit Ring */}
               <div className="absolute inset-2 rounded-full border border-amber-500/25 animate-[spin_30s_linear_infinite]" />
               <div className="absolute inset-10 rounded-full border border-dashed border-amber-400/20 animate-[spin_20s_linear_infinite_reverse]" />
 
-              {/* Central Glass Globe & Shopping Core */}
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl bg-gradient-to-br from-neutral-900/90 via-black/80 to-neutral-950/90 border border-amber-500/40 backdrop-blur-xl shadow-[0_0_50px_rgba(245,158,11,0.2)] flex flex-col items-center justify-center p-6 text-center group">
-                
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 p-[1px] shadow-lg shadow-amber-500/30 mb-4 group-hover:scale-110 transition-transform">
                   <div className="w-full h-full bg-black rounded-[15px] flex items-center justify-center">
                     <ShoppingBag className="w-8 h-8 text-amber-400" />
@@ -230,15 +209,12 @@ export default function EcommercePage({ setCurrentView }) {
                   ASK2GLOBAL ECOSYSTEM
                 </span>
 
-                {/* Connection Line Badges */}
                 <div className="mt-4 flex items-center gap-2 text-[10px] font-mono text-slate-300 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">
                   <Globe2 className="w-3 h-3 text-amber-400" />
                   <span>Borderlease Trade Engine</span>
                 </div>
               </div>
 
-              {/* Floating Product Cards / Glass Nodes */}
-              {/* Floating Box 1 - Top Left */}
               <div className="absolute -top-2 left-2 p-3 rounded-2xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-xl animate-bounce duration-[4000ms] flex items-center gap-3">
                 <Boxes className="w-5 h-5 text-amber-400" />
                 <div className="text-left">
@@ -247,7 +223,6 @@ export default function EcommercePage({ setCurrentView }) {
                 </div>
               </div>
 
-              {/* Floating Box 2 - Bottom Right */}
               <div className="absolute -bottom-2 right-2 p-3 rounded-2xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-xl animate-bounce duration-[5000ms] flex items-center gap-3">
                 <Package className="w-5 h-5 text-amber-400" />
                 <div className="text-left">
@@ -256,23 +231,18 @@ export default function EcommercePage({ setCurrentView }) {
                 </div>
               </div>
 
-              {/* Floating Box 3 - Top Right */}
               <div className="absolute top-12 -right-4 p-2.5 rounded-xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-lg flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-amber-400" />
                 <span className="text-[10px] font-mono font-bold text-amber-300">B2B Scaled</span>
               </div>
-
             </div>
-
           </div>
 
         </div>
       </section>
 
 
-      {/* =========================================================================
-          COMING SOON PRODUCT PREVIEW / CATEGORIES SECTION
-         ========================================================================= */}
+      {/* ================= COMING SOON CATEGORIES SECTION ================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -293,34 +263,34 @@ export default function EcommercePage({ setCurrentView }) {
             return (
               <div 
                 key={cat.id}
-                className="group relative rounded-2xl bg-neutral-950/80 border border-amber-500/20 hover:border-amber-400/60 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_10px_30px_rgba(245,158,11,0.12)] flex flex-col justify-between"
+                className="group relative rounded-2xl p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between cursor-pointer border text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_8px_0_#92400e,0_15px_30px_rgba(245,158,11,0.4)]"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-xs text-amber-400/70 font-bold tracking-widest">
+                    <span className="font-mono text-xs font-black tracking-widest text-slate-800 group-hover:text-amber-950">
                       {cat.id}
                     </span>
-                    <span className="text-[10px] font-mono font-semibold tracking-wider text-amber-300 bg-amber-500/10 border border-amber-500/30 px-2.5 py-1 rounded-full">
+                    <span className="text-[10px] font-mono font-bold tracking-wider text-slate-950 bg-white/60 border border-slate-300 group-hover:bg-amber-950/20 group-hover:border-amber-950/40 group-hover:text-amber-950 px-2.5 py-1 rounded-full">
                       Coming Soon
                     </span>
                   </div>
 
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 mb-4 group-hover:scale-110 group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-extrabold text-white group-hover:text-amber-300 transition-colors mb-2">
+                  <h3 className="text-xl font-black text-slate-950 group-hover:text-slate-950 transition-colors mb-2">
                     {cat.title}
                   </h3>
 
-                  <p className="text-xs text-slate-400 leading-relaxed font-light">
+                  <p className="text-xs text-slate-900 group-hover:text-amber-950 leading-relaxed font-semibold">
                     {cat.desc}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-neutral-900 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <div className="pt-6 mt-6 border-t border-slate-400/60 group-hover:border-amber-600/40 flex items-center justify-between text-[11px] font-mono text-slate-800 group-hover:text-amber-950 font-bold">
                   <span>Verified Supply Chain</span>
-                  <span className="group-hover:text-amber-400 transition-colors">Catalog Locked →</span>
+                  <span>Catalog Locked →</span>
                 </div>
               </div>
             );
@@ -330,61 +300,51 @@ export default function EcommercePage({ setCurrentView }) {
       </section>
 
 
-      {/* =========================================================================
-          GLOBAL COMMERCE SECTION
-         ========================================================================= */}
+      {/* ================= GLOBAL COMMERCE SECTION ================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
-        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-950 via-black to-neutral-950 border border-amber-500/30 p-8 sm:p-12 overflow-hidden shadow-2xl">
+        <div className="group relative rounded-3xl p-8 sm:p-12 overflow-hidden transition-all duration-300 text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border border-slate-200 shadow-[0_8px_0_#475569,0_15px_30px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_10px_0_#92400e,0_20px_40px_rgba(245,158,11,0.4)]">
           
-          <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
-
           <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
-            <span className="text-xs font-mono tracking-widest text-amber-400 uppercase font-semibold">
+            <span className="text-xs font-mono tracking-widest text-slate-800 group-hover:text-amber-950 uppercase font-black">
               INTERNATIONAL TRADE CORRIDOR
             </span>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">
               From India to the World
             </h2>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-slate-900 group-hover:text-amber-950 text-sm sm:text-base leading-relaxed font-semibold">
               ASK2GLOBAL is building a connected commerce ecosystem designed to bridge businesses, products and markets across borders.
             </p>
 
-            {/* Visual Trade Bridge Graphic */}
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
-              
-              {/* Origin Node */}
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-lg">
+                <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 shadow-lg group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all">
                   <MapPin className="w-7 h-7" />
                 </div>
-                <span className="mt-2 text-xs font-bold tracking-wider text-white">INDIA</span>
-                <span className="text-[10px] font-mono text-slate-400 uppercase">Manufacturing Hub</span>
+                <span className="mt-2 text-xs font-black tracking-wider text-slate-950">INDIA</span>
+                <span className="text-[10px] font-mono text-slate-800 group-hover:text-amber-950 uppercase font-bold">Manufacturing Hub</span>
               </div>
 
-              {/* Gold Animated Connection */}
               <div className="flex flex-col items-center">
                 <div className="flex items-center gap-2">
-                  <span className="w-12 sm:w-24 h-[2px] bg-gradient-to-r from-amber-500 via-amber-300 to-amber-500 animate-pulse" />
-                  <Globe2 className="w-5 h-5 text-amber-400 animate-spin" style={{ animationDuration: '12s' }} />
-                  <span className="w-12 sm:w-24 h-[2px] bg-gradient-to-r from-amber-500 via-amber-300 to-amber-500 animate-pulse" />
+                  <span className="w-12 sm:w-24 h-[3px] bg-slate-900 group-hover:bg-amber-950 animate-pulse" />
+                  <Globe2 className="w-5 h-5 text-slate-900 group-hover:text-amber-950 animate-spin" style={{ animationDuration: '12s' }} />
+                  <span className="w-12 sm:w-24 h-[3px] bg-slate-900 group-hover:bg-amber-950 animate-pulse" />
                 </div>
-                <span className="mt-2 text-[10px] font-mono text-amber-300 uppercase tracking-widest">
+                <span className="mt-2 text-[10px] font-mono text-slate-900 group-hover:text-amber-950 uppercase tracking-widest font-black">
                   Escrow Secured Corridor
                 </span>
               </div>
 
-              {/* Destination Node */}
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-amber-500/40 flex items-center justify-center text-amber-400 shadow-lg">
+                <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 shadow-lg group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all">
                   <Globe2 className="w-7 h-7" />
                 </div>
-                <span className="mt-2 text-xs font-bold tracking-wider text-white">GLOBAL MARKETS</span>
-                <span className="text-[10px] font-mono text-slate-400 uppercase">Worldwide Buyers</span>
+                <span className="mt-2 text-xs font-black tracking-wider text-slate-950">GLOBAL MARKETS</span>
+                <span className="text-[10px] font-mono text-slate-800 group-hover:text-amber-950 uppercase font-bold">Worldwide Buyers</span>
               </div>
-
             </div>
 
           </div>
@@ -394,9 +354,7 @@ export default function EcommercePage({ setCurrentView }) {
       </section>
 
 
-      {/* =========================================================================
-          WHY WAIT SECTION
-         ========================================================================= */}
+      {/* ================= WHY WAIT SECTION ================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
         <div className="text-center max-w-xl mx-auto mb-14 space-y-2">
@@ -412,14 +370,17 @@ export default function EcommercePage({ setCurrentView }) {
           {features.map((feat, idx) => {
             const Icon = feat.icon;
             return (
-              <div key={idx} className="p-8 rounded-2xl bg-neutral-950 border border-amber-500/20 hover:border-amber-400/50 transition-all text-left space-y-4 shadow-lg">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <div 
+                key={idx} 
+                className="group p-8 rounded-2xl transition-all text-left space-y-4 cursor-pointer border text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_8px_0_#92400e,0_15px_30px_rgba(245,158,11,0.4)] hover:-translate-y-1.5"
+              >
+                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-extrabold text-white tracking-wide">
+                <h3 className="text-lg font-black text-slate-950 tracking-wide">
                   {feat.title}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed font-light">
+                <p className="text-xs text-slate-900 group-hover:text-amber-950 leading-relaxed font-semibold">
                   {feat.description}
                 </p>
               </div>
@@ -430,27 +391,25 @@ export default function EcommercePage({ setCurrentView }) {
       </section>
 
 
-      {/* =========================================================================
-          EMAIL NOTIFICATION FORM
-         ========================================================================= */}
+      {/* ================= EMAIL NOTIFICATION FORM ================= */}
       <section id="notify-section" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
-        <div className="max-w-2xl mx-auto text-center space-y-6 bg-gradient-to-b from-neutral-950 to-black p-8 sm:p-12 rounded-3xl border border-amber-500/30 shadow-2xl">
-          <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/40 flex items-center justify-center text-amber-400 mx-auto">
+        <div className="group max-w-2xl mx-auto text-center space-y-6 p-8 sm:p-12 rounded-3xl transition-all duration-300 border text-slate-950 font-black bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 shadow-[0_8px_0_#475569,0_15px_30px_rgba(255,255,255,0.1)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_10px_0_#92400e,0_20px_40px_rgba(245,158,11,0.4)]">
+          <div className="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 mx-auto group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
             <Mail className="w-6 h-6" />
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-black text-white">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-950">
               Be the first to know.
             </h2>
-            <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-slate-900 group-hover:text-amber-950 font-semibold max-w-md mx-auto">
               Subscribe to get exclusive early access and launch updates straight to your inbox.
             </p>
           </div>
 
           {isSubmitted ? (
-            <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-400/50 text-amber-300 text-xs font-semibold flex items-center justify-center gap-2">
+            <div className="p-4 rounded-xl bg-slate-900 text-amber-300 text-xs font-extrabold flex items-center justify-center gap-2 border border-slate-700 shadow-md">
               <CheckCircle2 className="w-4 h-4 text-amber-400" />
               Thank you! We'll keep you updated.
             </div>
@@ -462,11 +421,11 @@ export default function EcommercePage({ setCurrentView }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="w-full px-4 py-3 rounded-xl bg-black border border-neutral-800 text-slate-100 text-xs focus:outline-none focus:border-amber-400 placeholder:text-slate-600 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-xs focus:outline-none focus:border-amber-400 placeholder:text-slate-500 transition-colors font-medium"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-xl text-xs font-bold text-black bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:scale-105 transition-all shadow-md flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+                  className="px-6 py-3 rounded-xl text-xs font-black text-slate-100 bg-slate-900 border border-slate-700 hover:bg-black hover:text-amber-300 transition-all shadow-md flex items-center justify-center gap-2 shrink-0 cursor-pointer"
                 >
                   Notify Me
                   <Send className="w-3.5 h-3.5" />
@@ -474,7 +433,7 @@ export default function EcommercePage({ setCurrentView }) {
               </div>
 
               {errorMessage && (
-                <p className="text-[11px] text-red-400 font-mono text-left pl-1">
+                <p className="text-[11px] text-red-700 font-mono text-left pl-1 font-extrabold">
                   {errorMessage}
                 </p>
               )}
@@ -485,13 +444,9 @@ export default function EcommercePage({ setCurrentView }) {
       </section>
 
 
-      {/* =========================================================================
-          FOOTER
-         ========================================================================= */}
+      {/* ================= FOOTER ================= */}
       <footer id="footer" className="bg-black py-12 px-4 sm:px-6 lg:px-8 border-t border-amber-500/20 text-xs">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          
-          {/* Brand */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-300 to-amber-600 p-[1px]">
               <div className="w-full h-full bg-black rounded-[11px] flex items-center justify-center font-black text-[10px] text-amber-300">
@@ -504,7 +459,6 @@ export default function EcommercePage({ setCurrentView }) {
             </div>
           </div>
 
-          {/* Links */}
           <div className="flex flex-wrap justify-center gap-6 font-medium text-slate-400">
             <button 
               onClick={() => { if (setCurrentView) setCurrentView('all'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
@@ -538,11 +492,9 @@ export default function EcommercePage({ setCurrentView }) {
             </button>
           </div>
 
-          {/* Tagline */}
           <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">
             Global Business. Connected Opportunities.
           </span>
-
         </div>
       </footer>
 
