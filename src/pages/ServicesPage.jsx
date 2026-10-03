@@ -164,7 +164,10 @@ const serviceCategories = [
 
 export default function ServicesPage({ onContactClick }) {
   const [activeModalService, setActiveModalService] = useState(null);
-  const [hoveredNode, setHoveredNode] = useState(null);
+  
+  // States for explicit hover tracking
+  const [hoveredCardId, setHoveredCardId] = useState(null);
+  const [hoveredEcosystemId, setHoveredEcosystemId] = useState(null);
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -178,13 +181,10 @@ export default function ServicesPage({ onContactClick }) {
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(245,158,11,0.08),rgba(255,255,255,0))] pointer-events-none z-0" />
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#1f29370a_1px,transparent_1px),linear-gradient(to_bottom,#1f29370a_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
-      {/* ==================================================
-          PAGE HERO
-      ================================================== */}
+      {/* PAGE HERO */}
       <section className="relative z-10 pt-8 pb-20 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-semibold tracking-wider uppercase backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5" />
@@ -220,18 +220,15 @@ export default function ServicesPage({ onContactClick }) {
             </div>
           </div>
 
-          {/* Right Visual Column: ONE BUSINESS ECOSYSTEM Orbit */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
               
-              {/* Outer Glow Ring */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-500/20 to-transparent blur-3xl pointer-events-none" />
 
-              {/* SVG Connecting Lines (Centered behind logo) */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible">
                 {servicesData.map((s, idx) => {
                   const angle = (idx * 360) / servicesData.length;
-                  const radius = 150; // px
+                  const radius = 150;
                   const x = radius * Math.cos((angle * Math.PI) / 180);
                   const y = radius * Math.sin((angle * Math.PI) / 180);
 
@@ -250,7 +247,6 @@ export default function ServicesPage({ onContactClick }) {
                 })}
               </svg>
 
-              {/* Center Logo Node - Perfect Round Frame & Full Aspect Cover */}
               <div className="relative w-32 h-32 rounded-full bg-black border-2 border-amber-500/60 shadow-[0_0_50px_rgba(245,158,11,0.4)] flex items-center justify-center p-1.5 z-20 overflow-hidden shrink-0">
                 <img 
                   src={ask2Logo} 
@@ -259,10 +255,9 @@ export default function ServicesPage({ onContactClick }) {
                 />
               </div>
 
-              {/* Orbiting Radial Nodes */}
               {servicesData.map((s, idx) => {
                 const angle = (idx * 360) / servicesData.length;
-                const radius = 150; // px
+                const radius = 150;
                 const x = radius * Math.cos((angle * Math.PI) / 180);
                 const y = radius * Math.sin((angle * Math.PI) / 180);
 
@@ -270,13 +265,12 @@ export default function ServicesPage({ onContactClick }) {
                   <div 
                     key={s.id}
                     style={{ transform: `translate(${x}px, ${y}px)` }}
-                    className="absolute p-2.5 rounded-xl bg-neutral-900/90 border border-amber-500/40 text-amber-300 shadow-md shadow-amber-500/10 hover:scale-110 transition-transform duration-300 group cursor-pointer z-30"
+                    className="absolute p-2.5 rounded-xl bg-gradient-to-b from-slate-100 to-slate-300 text-slate-800 border-2 border-slate-400 shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 hover:text-black hover:border-amber-300 hover:shadow-[0_0_25px_rgba(245,158,11,0.8)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer z-30"
                     title={s.title}
                     onClick={() => setActiveModalService(s)}
                   >
-                    <s.icon className="w-4 h-4 text-amber-400" />
+                    <s.icon className="w-4 h-4 text-slate-800 group-hover:text-black transition-colors" />
                     
-                    {/* Node Label Tooltip */}
                     <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-md bg-black/95 border border-amber-500/40 text-[10px] font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-40">
                       {s.title}
                     </span>
@@ -284,7 +278,6 @@ export default function ServicesPage({ onContactClick }) {
                 );
               })}
 
-              {/* Ecosystem Badge Tag */}
               <div className="absolute -bottom-2 bg-black/95 border border-amber-500/50 px-4 py-1.5 rounded-full text-[11px] font-mono font-bold text-amber-300 tracking-wider uppercase shadow-lg backdrop-blur-md z-30">
                 ONE BUSINESS ECOSYSTEM
               </div>
@@ -296,7 +289,7 @@ export default function ServicesPage({ onContactClick }) {
       </section>
 
       {/* ==================================================
-          SERVICES SECTION (9 CARDS)
+          SERVICES SECTION (CURSOR JISPE HO WOH GOLDEN, BAKI SILVER)
       ================================================== */}
       <section id="services-grid" className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
@@ -308,44 +301,75 @@ export default function ServicesPage({ onContactClick }) {
           </p>
         </div>
 
-        {/* 3-Column Interactive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((item) => {
             const IconComponent = item.icon;
+            const isHovered = hoveredCardId === item.id;
+
             return (
               <div
                 key={item.id}
+                onMouseEnter={() => setHoveredCardId(item.id)}
+                onMouseLeave={() => setHoveredCardId(null)}
                 onClick={() => setActiveModalService(item)}
-                className="group relative rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-amber-500/60 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(245,158,11,0.15)] flex flex-col justify-between cursor-pointer backdrop-blur-sm"
+                className={`relative rounded-2xl p-6 flex flex-col justify-between cursor-pointer transition-all duration-300 transform-gpu ${
+                  isHovered
+                    ? /* GOLDEN STATE WHEN CURSOR IS ON THIS CARD */
+                      'bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#d97706] border-2 border-amber-200 text-black shadow-[0_0_35px_rgba(245,158,11,0.8),0_15px_35px_rgba(245,158,11,0.5)] -translate-y-2 scale-[1.02] z-20'
+                    : /* SILVER METALLIC STATE WHEN NOT HOVERED */
+                      'bg-gradient-to-b from-[#e2e8f0] via-[#cbd5e1] to-[#94a3b8] border-2 border-slate-300/80 text-slate-900 shadow-[0_10px_25px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.9)]'
+                }`}
               >
-                {/* Header info */}
                 <div>
+                  {/* Top Badges */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono font-bold text-amber-400/80 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md">
+                    <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-lg border transition-colors ${
+                      isHovered 
+                        ? 'bg-black/20 text-amber-100 border-amber-200/40' 
+                        : 'text-amber-900 bg-amber-400/20 border-amber-500/30'
+                    }`}>
                       #{item.id}
                     </span>
-                    <span className="text-[10px] font-mono font-bold tracking-wider text-slate-400 uppercase bg-neutral-800/80 px-2.5 py-1 rounded-md">
+                    <span className={`text-[10px] font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg border transition-colors ${
+                      isHovered 
+                        ? 'text-black bg-amber-300/30 border-amber-900/30' 
+                        : 'text-slate-800 bg-slate-900/10 border-slate-400/50'
+                    }`}>
                       {item.tag}
                     </span>
                   </div>
 
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all duration-300 mb-4">
+                  {/* Icon Box */}
+                  <div className={`w-12 h-12 rounded-xl border flex items-center justify-center shadow-md transition-all duration-300 mb-4 ${
+                    isHovered 
+                      ? 'bg-black/20 border-amber-200 text-white' 
+                      : 'bg-slate-100 border-slate-300 text-slate-900'
+                  }`}>
                     <IconComponent className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors mb-2">
+                  {/* Title & Description */}
+                  <h3 className={`text-xl font-black mb-2 transition-colors ${
+                    isHovered ? 'text-black' : 'text-slate-900'
+                  }`}>
                     {item.title}
                   </h3>
 
-                  <p className="text-slate-400 group-hover:text-slate-300 text-sm leading-relaxed mb-6 transition-colors">
+                  <p className={`text-sm leading-relaxed font-medium mb-6 transition-colors ${
+                    isHovered ? 'text-slate-950 font-semibold' : 'text-slate-700'
+                  }`}>
                     {item.description}
                   </p>
                 </div>
 
-                {/* Footer Action */}
-                <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-bold text-amber-400 group-hover:text-amber-300">
+                {/* Card Footer */}
+                <div className={`pt-4 border-t flex items-center justify-between text-xs font-extrabold transition-colors ${
+                  isHovered 
+                    ? 'border-amber-900/30 text-black' 
+                    : 'border-slate-400/50 text-slate-900'
+                }`}>
                   <span>Explore Service</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className={`w-4 h-4 transition-transform ${isHovered ? 'translate-x-1.5' : ''}`} />
                 </div>
               </div>
             );
@@ -354,10 +378,10 @@ export default function ServicesPage({ onContactClick }) {
       </section>
 
       {/* ==================================================
-          BUSINESS ECOSYSTEM SECTION (INTERACTIVE NETWORK)
+          BUSINESS ECOSYSTEM SECTION (HOVERED = GOLD, OTHERS = DIM SILVER)
       ================================================== */}
       <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
-        <div className="rounded-3xl bg-neutral-950/80 border border-amber-500/30 p-8 sm:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-neutral-950/80 border border-slate-700/60 p-8 sm:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
           
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-xs font-mono text-amber-400 uppercase tracking-widest font-bold">CONNECTED NETWORK</span>
@@ -369,38 +393,40 @@ export default function ServicesPage({ onContactClick }) {
             </p>
           </div>
 
-          {/* Network Visualization */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             
-            {/* Core Node */}
+            {/* Core Center Badge */}
             <div className="col-span-2 sm:col-span-3 lg:col-span-5 flex justify-center mb-4">
-              <div className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500/20 via-amber-400/10 to-amber-500/20 border-2 border-amber-400/80 shadow-[0_0_25px_rgba(245,158,11,0.25)] text-center">
-                <span className="font-extrabold text-base sm:text-lg text-amber-300 tracking-wider">ASK2GLOBAL CENTRAL ECOSYSTEM</span>
+              <div className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-black border-2 border-amber-300 shadow-[0_0_25px_rgba(245,158,11,0.5)] text-center">
+                <span className="font-extrabold text-base sm:text-lg tracking-wider uppercase">ASK2GLOBAL CENTRAL ECOSYSTEM</span>
               </div>
             </div>
 
-            {/* Service Nodes */}
+            {/* Silver Nodes transforming into Gold on Hover */}
             {servicesData.map((node) => {
-              const isHovered = hoveredNode === node.id;
-              const isOtherHovered = hoveredNode && hoveredNode !== node.id;
+              const isHovered = hoveredEcosystemId === node.id;
+              const isAnyOtherHovered = hoveredEcosystemId && hoveredEcosystemId !== node.id;
 
               return (
                 <div
                   key={node.id}
-                  onMouseEnter={() => setHoveredNode(node.id)}
-                  onMouseLeave={() => setHoveredNode(null)}
+                  onMouseEnter={() => setHoveredEcosystemId(node.id)}
+                  onMouseLeave={() => setHoveredEcosystemId(null)}
                   onClick={() => setActiveModalService(node)}
-                  className={`p-4 rounded-xl border transition-all duration-300 cursor-pointer text-center flex flex-col items-center justify-center space-y-2 ${
+                  className={`p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer text-center flex flex-col items-center justify-center space-y-2 transform-gpu ${
                     isHovered
-                      ? 'bg-amber-500/20 border-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.3)] scale-105 z-20'
-                      : isOtherHovered
-                      ? 'opacity-40 bg-neutral-900/40 border-neutral-800'
-                      : 'bg-neutral-900/80 border-neutral-800 hover:border-amber-500/40'
+                      ? /* GOLDEN ACTIVE STATE */
+                        'bg-gradient-to-r from-amber-400 to-amber-500 border-amber-200 text-black shadow-[0_0_30px_rgba(245,158,11,0.9)] scale-105 z-20 font-bold'
+                      : isAnyOtherHovered
+                      ? /* DIMMED STATE WHEN ANOTHER NODE IS HOVERED */
+                        'opacity-30 bg-slate-900 border-slate-800 text-slate-500'
+                      : /* STANDARD SILVER METALLIC STATE */
+                        'bg-gradient-to-b from-slate-100 to-slate-300 border-slate-300 text-slate-900 shadow-[0_6px_15px_rgba(0,0,0,0.3)] hover:border-amber-400'
                   }`}
                 >
-                  <node.icon className={`w-5 h-5 ${isHovered ? 'text-amber-300' : 'text-amber-400'}`} />
-                  <span className="text-xs font-bold text-slate-200 line-clamp-1">{node.title}</span>
-                  <span className="text-[10px] font-mono text-slate-400">{node.tag}</span>
+                  <node.icon className={`w-5 h-5 ${isHovered ? 'text-black' : 'text-slate-900'}`} />
+                  <span className="text-xs font-black line-clamp-1">{node.title}</span>
+                  <span className={`text-[10px] font-mono font-semibold ${isHovered ? 'text-slate-900' : 'text-slate-700'}`}>{node.tag}</span>
                 </div>
               );
             })}
@@ -409,9 +435,7 @@ export default function ServicesPage({ onContactClick }) {
         </div>
       </section>
 
-      {/* ==================================================
-          HOW WE SUPPORT YOUR BUSINESS (5-STEP PROCESS)
-      ================================================== */}
+      {/* HOW WE SUPPORT YOUR BUSINESS */}
       <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-3xl font-extrabold text-white tracking-tight">
@@ -424,17 +448,26 @@ export default function ServicesPage({ onContactClick }) {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
           {processSteps.map((step, idx) => (
-            <div key={step.num} className="relative p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 backdrop-blur-sm flex flex-col justify-between hover:border-amber-500/40 transition-colors">
+            <div 
+              key={step.num} 
+              className="group relative p-5 rounded-2xl 
+                bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 
+                border-2 border-slate-300 shadow-[0_8px_20px_rgba(0,0,0,0.4)] 
+                hover:bg-gradient-to-r hover:from-amber-400 hover:via-amber-500 hover:to-amber-600 
+                hover:border-amber-200 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] 
+                transition-all duration-300 transform-gpu hover:-translate-y-2 
+                flex flex-col justify-between"
+            >
               <div>
-                <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/40 flex items-center justify-center font-mono font-bold text-amber-400 text-sm mb-4">
+                <div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-700 group-hover:bg-black group-hover:border-amber-300 flex items-center justify-center font-mono font-bold text-amber-400 text-sm mb-4 transition-colors">
                   {step.num}
                 </div>
-                <h3 className="text-base font-extrabold text-white mb-2 tracking-wide">{step.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
+                <h3 className="text-base font-black text-slate-900 group-hover:text-black transition-colors mb-2 tracking-wide">{step.title}</h3>
+                <p className="text-xs text-slate-800 group-hover:text-slate-950 font-medium transition-colors leading-relaxed">{step.desc}</p>
               </div>
 
               {idx < processSteps.length - 1 && (
-                <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-amber-500/50">
+                <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-slate-500 group-hover:text-amber-200 transition-colors">
                   <ChevronRight className="w-6 h-6" />
                 </div>
               )}
@@ -443,9 +476,7 @@ export default function ServicesPage({ onContactClick }) {
         </div>
       </section>
 
-      {/* ==================================================
-          SERVICE CATEGORIES SECTION
-      ================================================== */}
+      {/* SERVICE CATEGORIES SECTION */}
       <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl font-extrabold text-white tracking-tight">
@@ -460,21 +491,30 @@ export default function ServicesPage({ onContactClick }) {
           {serviceCategories.map((cat, i) => {
             const CatIcon = cat.icon;
             return (
-              <div key={i} className="p-6 rounded-2xl bg-neutral-900/70 border border-neutral-800 hover:border-amber-500/40 transition-all backdrop-blur-sm space-y-4">
+              <div 
+                key={i} 
+                className="group p-6 rounded-2xl 
+                  bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 
+                  border-2 border-slate-300 shadow-[0_10px_25px_rgba(0,0,0,0.4)] 
+                  hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 
+                  hover:border-amber-200 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] 
+                  transition-all duration-300 transform-gpu hover:-translate-y-1.5 
+                  space-y-4"
+              >
                 <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400">
+                  <div className="p-3 rounded-xl bg-slate-900 border border-slate-700 group-hover:bg-black group-hover:border-amber-300 text-amber-400 transition-all">
                     <CatIcon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-white tracking-wide">{cat.title}</h3>
+                  <h3 className="text-lg font-black text-slate-900 group-hover:text-black transition-colors tracking-wide">{cat.title}</h3>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed">{cat.desc}</p>
+                <p className="text-xs text-slate-800 font-medium leading-relaxed">{cat.desc}</p>
 
                 <div className="space-y-2 pt-2">
-                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Key Services:</span>
+                  <span className="text-[10px] font-mono text-slate-700 uppercase tracking-wider font-bold">Key Services:</span>
                   <div className="flex flex-wrap gap-2">
                     {cat.services.map((s, sIdx) => (
-                      <span key={sIdx} className="text-xs font-medium text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md">
+                      <span key={sIdx} className="text-xs font-bold text-slate-900 group-hover:text-black bg-slate-900/10 group-hover:bg-black/10 border border-slate-400/50 group-hover:border-amber-900/30 px-2.5 py-1 rounded-md transition-colors">
                         {s}
                       </span>
                     ))}
@@ -486,11 +526,8 @@ export default function ServicesPage({ onContactClick }) {
         </div>
       </section>
 
-      {/* ==================================================
-          PREMIUM BANNER & FINAL CONTACT CTA
-      ================================================== */}
+      {/* PREVIEWS & CONTACT CTA */}
       <section id="contact-section" className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
-        {/* Full-width Cinematic Banner */}
         <div className="rounded-3xl bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border border-amber-500/40 p-8 sm:p-14 text-center space-y-6 relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.15),transparent_70%)] pointer-events-none" />
           
@@ -513,7 +550,6 @@ export default function ServicesPage({ onContactClick }) {
               Discuss Your Requirement
             </button>
 
-            {/* DIRECT MAIL OPEN BUTTON */}
             <a
               href="mailto:ask2global@gmail.com?subject=Business Inquiry - ASK2GLOBAL&body=Hello ASK2GLOBAL Team,"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-neutral-900 border border-amber-500/40 text-slate-200 hover:text-white font-bold text-sm tracking-wide hover:bg-neutral-800 transition-all cursor-pointer shadow-lg hover:border-amber-400"
@@ -524,14 +560,11 @@ export default function ServicesPage({ onContactClick }) {
         </div>
       </section>
 
-      {/* ==================================================
-          SERVICE DETAIL MODAL / PANEL
-      ================================================== */}
+      {/* SERVICE DETAIL MODAL */}
       {activeModalService && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-neutral-900 border border-amber-500/40 rounded-2xl w-full max-w-2xl p-6 sm:p-8 relative shadow-2xl text-slate-100 max-h-[90vh] overflow-y-auto">
             
-            {/* Close Button */}
             <button
               onClick={() => setActiveModalService(null)}
               className="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors cursor-pointer"
@@ -540,7 +573,6 @@ export default function ServicesPage({ onContactClick }) {
               <X className="w-5 h-5" />
             </button>
 
-            {/* Modal Header */}
             <div className="flex items-center gap-4 pb-6 mb-6 border-b border-neutral-800">
               <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
                 {React.createElement(activeModalService.icon, { className: 'w-7 h-7' })}
@@ -553,7 +585,6 @@ export default function ServicesPage({ onContactClick }) {
               </div>
             </div>
 
-            {/* Modal Body Content */}
             <div className="space-y-5 text-xs sm:text-sm">
               <div className="p-4 bg-black/60 border border-neutral-800 rounded-xl space-y-1">
                 <span className="text-amber-400 font-mono font-bold uppercase text-[11px] block">Overview</span>
@@ -576,7 +607,6 @@ export default function ServicesPage({ onContactClick }) {
               </div>
             </div>
 
-            {/* Modal CTA */}
             <div className="pt-6 mt-6 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
               <span className="text-xs text-slate-400">Ready to activate this capability?</span>
               <button
