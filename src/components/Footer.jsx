@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, ShieldCheck, ExternalLink, ArrowRight, Building, FileText, Sparkles, Briefcase } from 'lucide-react';
+import { Mail, Phone, ShieldCheck, ArrowRight, Building, FileText, Sparkles, Briefcase } from 'lucide-react';
 // Assets folder path verify kar lein
 import logoImg from '../assets/ask2 logo 2.jpeg'; 
 
@@ -154,11 +154,23 @@ export default function Footer() {
               <div className="p-3 rounded-xl bg-neutral-900/90 border border-amber-500/20 hover:border-amber-500/50 transition-all group/card shadow-lg backdrop-blur-md">
                 <span className="text-[9px] uppercase tracking-widest text-zinc-500 block mb-1 font-mono">Official Mail</span>
                 <a 
-                  href="mailto:tenders@ask2global.com" 
+                  href="mailto:ask2global@gmail.com" 
                   className="font-mono text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-2 text-[11px] truncate"
                 >
                   <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0 group-hover/card:scale-110 transition-transform" />
                   <span className="truncate">ask2global@gmail.com</span>
+                </a>
+              </div>
+
+              {/* Added Mobile Number Box */}
+              <div className="p-3 rounded-xl bg-neutral-900/90 border border-amber-500/20 hover:border-amber-500/50 transition-all group/card shadow-lg backdrop-blur-md">
+                <span className="text-[9px] uppercase tracking-widest text-zinc-500 block mb-1 font-mono">Support Phone</span>
+                <a 
+                  href="tel:+919336849321" 
+                  className="font-mono text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-2 text-[11px] truncate"
+                >
+                  <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0 group-hover/card:scale-110 transition-transform" />
+                  <span className="truncate">+91 9336849321</span>
                 </a>
               </div>
             </div>
