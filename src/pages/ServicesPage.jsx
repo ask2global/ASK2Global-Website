@@ -518,7 +518,7 @@ export default function ServicesPage({ onContactClick }) {
               href="mailto:ask2global@gmail.com?subject=Business Inquiry - ASK2GLOBAL&body=Hello ASK2GLOBAL Team,"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-neutral-900 border border-amber-500/40 text-slate-200 hover:text-white font-bold text-sm tracking-wide hover:bg-neutral-800 transition-all cursor-pointer shadow-lg hover:border-amber-400"
             >
-              Contact ASK2GLOBAL
+              Contact - ASK2GLOBAL
             </a>
           </div>
         </div>
