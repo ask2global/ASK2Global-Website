@@ -587,7 +587,7 @@ export default function ServicesPage({ onContactClick }) {
                 }}
                 className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-black font-extrabold text-xs tracking-wide shadow-md hover:scale-105 transition-transform cursor-pointer"
               >
-                Discuss This Service
+                Discuss This Servic
               </button>
             </div>
 
