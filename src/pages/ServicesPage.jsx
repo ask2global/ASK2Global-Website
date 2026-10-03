@@ -380,60 +380,7 @@ export default function ServicesPage({ onContactClick }) {
       {/* ==================================================
           BUSINESS ECOSYSTEM SECTION (HOVERED = GOLD, OTHERS = DIM SILVER)
       ================================================== */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
-        <div className="rounded-3xl bg-neutral-950/80 border border-slate-700/60 p-8 sm:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
-          
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <span className="text-xs font-mono text-amber-400 uppercase tracking-widest font-bold">CONNECTED NETWORK</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-              ONE ECOSYSTEM. MULTIPLE BUSINESS SOLUTIONS.
-            </h2>
-            <p className="text-slate-400 text-xs sm:text-sm">
-              Hover over any node to highlight interconnected capabilities.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            
-            {/* Core Center Badge */}
-            <div className="col-span-2 sm:col-span-3 lg:col-span-5 flex justify-center mb-4">
-              <div className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-black border-2 border-amber-300 shadow-[0_0_25px_rgba(245,158,11,0.5)] text-center">
-                <span className="font-extrabold text-base sm:text-lg tracking-wider uppercase">ASK2GLOBAL CENTRAL ECOSYSTEM</span>
-              </div>
-            </div>
-
-            {/* Silver Nodes transforming into Gold on Hover */}
-            {servicesData.map((node) => {
-              const isHovered = hoveredEcosystemId === node.id;
-              const isAnyOtherHovered = hoveredEcosystemId && hoveredEcosystemId !== node.id;
-
-              return (
-                <div
-                  key={node.id}
-                  onMouseEnter={() => setHoveredEcosystemId(node.id)}
-                  onMouseLeave={() => setHoveredEcosystemId(null)}
-                  onClick={() => setActiveModalService(node)}
-                  className={`p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer text-center flex flex-col items-center justify-center space-y-2 transform-gpu ${
-                    isHovered
-                      ? /* GOLDEN ACTIVE STATE */
-                        'bg-gradient-to-r from-amber-400 to-amber-500 border-amber-200 text-black shadow-[0_0_30px_rgba(245,158,11,0.9)] scale-105 z-20 font-bold'
-                      : isAnyOtherHovered
-                      ? /* DIMMED STATE WHEN ANOTHER NODE IS HOVERED */
-                        'opacity-30 bg-slate-900 border-slate-800 text-slate-500'
-                      : /* STANDARD SILVER METALLIC STATE */
-                        'bg-gradient-to-b from-slate-100 to-slate-300 border-slate-300 text-slate-900 shadow-[0_6px_15px_rgba(0,0,0,0.3)] hover:border-amber-400'
-                  }`}
-                >
-                  <node.icon className={`w-5 h-5 ${isHovered ? 'text-black' : 'text-slate-900'}`} />
-                  <span className="text-xs font-black line-clamp-1">{node.title}</span>
-                  <span className={`text-[10px] font-mono font-semibold ${isHovered ? 'text-slate-900' : 'text-slate-700'}`}>{node.tag}</span>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
+      
 
       {/* HOW WE SUPPORT YOUR BUSINESS */}
       <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
