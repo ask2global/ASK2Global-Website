@@ -512,12 +512,14 @@ export default function ServicesPage({ onContactClick }) {
             >
               Discuss Your Requirement
             </button>
-            <button
-              onClick={() => onContactClick ? onContactClick() : alert('Redirecting to contact desk...')}
-              className="px-8 py-4 rounded-xl bg-neutral-900 border border-amber-500/40 text-slate-200 hover:text-white font-bold text-sm tracking-wide hover:bg-neutral-800 transition-all cursor-pointer"
+
+            {/* DIRECT MAIL OPEN BUTTON */}
+            <a
+              href="mailto:ask2global@gmail.com?subject=Business Inquiry - ASK2GLOBAL&body=Hello ASK2GLOBAL Team,"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-neutral-900 border border-amber-500/40 text-slate-200 hover:text-white font-bold text-sm tracking-wide hover:bg-neutral-800 transition-all cursor-pointer shadow-lg hover:border-amber-400"
             >
               Contact ASK2GLOBAL
-            </button>
+            </a>
           </div>
         </div>
       </section>
