@@ -170,7 +170,7 @@ export default function Footer() {
                   className="font-mono text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-2 text-[11px] truncate"
                 >
                   <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0 group-hover/card:scale-110 transition-transform" />
-                  <span className="truncate">+91 9336849321</span>
+                  <span className="truncate">+91 9889889399</span>
                 </a>
               </div>
             </div>
