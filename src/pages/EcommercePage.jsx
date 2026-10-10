@@ -634,7 +634,7 @@ export default function EcommercePage({ setCurrentView }) {
           <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-4">
             <div className="flex items-center gap-2 text-zinc-400">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <p>© 2025 ASK2Global Private Limited. All rights reserved.</p>
+              <p>© 2025 ASK2Global Private Limited. All rights reserved</p>
             </div>
             <div className="flex items-center gap-3">
               <span className="hidden sm:inline text-zinc-700">•</span>
