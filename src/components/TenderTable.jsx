@@ -24,9 +24,9 @@ export default function TenderPerformanceSection() {
    - Hover State: Full Glossy Gold Gradient with Amber Glow
   */
 
-  const interactiveCard = "relative p-7 rounded-3xl bg-gradient-to-b from-slate-200 via-slate-100 to-slate-400 border border-slate-300 text-slate-900 shadow-[0_10px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.9)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-300 hover:text-slate-950 hover:shadow-[0_0_35px_rgba(245,158,11,0.6),inset_0_1px_0_rgba(255,255,255,0.9)] hover:scale-[1.03] transition-all duration-300 ease-out flex flex-col justify-between group cursor-pointer";
+  const interactiveCard = "relative p-8 rounded-3xl bg-gradient-to-b from-slate-200 via-slate-100 to-slate-400 border border-slate-300 text-slate-900 shadow-[0_10px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.9)] hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 hover:border-amber-300 hover:text-slate-950 hover:shadow-[0_0_35px_rgba(245,158,11,0.6),inset_0_1px_0_rgba(255,255,255,0.9)] hover:scale-[1.03] transition-all duration-300 ease-out flex flex-col justify-between group cursor-pointer";
   
-  const goldenActiveCard = "relative p-7 rounded-3xl bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-500 border border-amber-300 text-slate-950 shadow-[0_0_35px_rgba(245,158,11,0.5),inset_0_1px_0_rgba(255,255,255,0.9)] hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between group cursor-pointer";
+  const goldenActiveCard = "relative p-8 rounded-3xl bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-500 border border-amber-300 text-slate-950 shadow-[0_0_35px_rgba(245,158,11,0.5),inset_0_1px_0_rgba(255,255,255,0.9)] hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between group cursor-pointer";
 
   return (
     <section className="relative w-full bg-[#050505] text-slate-100 font-sans py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -51,7 +51,7 @@ export default function TenderPerformanceSection() {
             Tender Performance at a Glance
           </h2>
           
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-medium">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-medium">
             Turning Tender Opportunities into Successful Business Outcomes through Intelligent Analytics.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function TenderPerformanceSection() {
               <Star className="w-4 h-4 text-slate-950 fill-slate-950/30 animate-pulse" />
             </div>
             
-            <span className="text-[11px] font-mono font-black text-slate-900 uppercase tracking-widest mb-1">
+            <span className="text-xs font-mono font-black text-slate-900 uppercase tracking-widest mb-1">
               Primary Metric
             </span>
             
@@ -88,15 +88,15 @@ export default function TenderPerformanceSection() {
                 <span className="text-3xl font-black font-mono text-slate-950 tracking-tighter">
                   87.3%
                 </span>
-                <span className="text-[10px] text-slate-900 font-extrabold tracking-widest uppercase mt-0.5">
+                <span className="text-[11px] text-slate-900 font-extrabold tracking-widest uppercase mt-0.5">
                   Success Rate
                 </span>
               </div>
             </div>
 
             <div>
-              <h3 className="text-sm font-black text-slate-950 uppercase tracking-wider">Tender Win Index</h3>
-              <p className="text-xs text-slate-900/80 font-semibold mt-1 leading-relaxed">High-converting benchmark across government & corporate sectors.</p>
+              <h3 className="text-base font-black text-slate-950 uppercase tracking-wider">Tender Win Index</h3>
+              <p className="text-sm text-slate-900/90 font-semibold mt-1.5 leading-relaxed">High-converting benchmark across government & corporate sectors.</p>
             </div>
           </div>
 
@@ -106,14 +106,14 @@ export default function TenderPerformanceSection() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-slate-100 to-slate-300 group-hover:from-amber-200 group-hover:to-amber-400 border border-slate-400 group-hover:border-amber-300 flex items-center justify-center mb-5 shadow-inner transition-colors duration-300">
                 <Building2 className="w-6 h-6 text-slate-900" />
               </div>
-              <span className="text-[10px] font-mono font-extrabold text-slate-700 group-hover:text-slate-900 uppercase tracking-widest">Sector Focus</span>
-              <h3 className="text-xl font-black text-slate-950 mt-1">Government Tenders</h3>
-              <p className="text-xs text-slate-700 group-hover:text-slate-900/90 font-medium mb-5">Public Sector Procurement</p>
+              <span className="text-xs font-mono font-extrabold text-slate-700 group-hover:text-slate-900 uppercase tracking-widest">Sector Focus</span>
+              <h3 className="text-2xl font-black text-slate-950 mt-1">Government Tenders</h3>
+              <p className="text-sm text-slate-700 group-hover:text-slate-900/90 font-medium mb-6">Public Sector Procurement</p>
               
-              <ul className="space-y-2.5 text-xs text-slate-900 font-bold">
+              <ul className="space-y-3 text-sm text-slate-900 font-bold">
                 {['Tender discovery', 'Eligibility analysis', 'Documentation', 'Bid submission', 'Compliance support'].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700 group-hover:text-slate-950 shrink-0" />
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-4.5 h-4.5 text-amber-700 group-hover:text-slate-950 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -127,14 +127,14 @@ export default function TenderPerformanceSection() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-slate-100 to-slate-300 group-hover:from-amber-200 group-hover:to-amber-400 border border-slate-400 group-hover:border-amber-300 flex items-center justify-center mb-5 shadow-inner transition-colors duration-300">
                 <Briefcase className="w-6 h-6 text-slate-900" />
               </div>
-              <span className="text-[10px] font-mono font-extrabold text-slate-700 group-hover:text-slate-900 uppercase tracking-widest">Sector Focus</span>
-              <h3 className="text-xl font-black text-slate-950 mt-1">Private Tenders</h3>
-              <p className="text-xs text-slate-700 group-hover:text-slate-900/90 font-medium mb-5">Corporate Commercial Bids</p>
+              <span className="text-xs font-mono font-extrabold text-slate-700 group-hover:text-slate-900 uppercase tracking-widest">Sector Focus</span>
+              <h3 className="text-2xl font-black text-slate-950 mt-1">Private Tenders</h3>
+              <p className="text-sm text-slate-700 group-hover:text-slate-900/90 font-medium mb-6">Corporate Commercial Bids</p>
               
-              <ul className="space-y-2.5 text-xs text-slate-900 font-bold">
+              <ul className="space-y-3 text-sm text-slate-900 font-bold">
                 {['Corporate opportunities', 'Vendor participation', 'Commercial bids', 'Contract opportunities', 'Business partnerships'].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700 group-hover:text-slate-950 shrink-0" />
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-4.5 h-4.5 text-amber-700 group-hover:text-slate-950 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -148,14 +148,14 @@ export default function TenderPerformanceSection() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-slate-100 to-slate-300 group-hover:from-amber-200 group-hover:to-amber-400 border border-slate-400 group-hover:border-amber-300 flex items-center justify-center mb-5 shadow-inner transition-colors duration-300">
                 <Users className="w-6 h-6 text-slate-900" />
               </div>
-              <span className="text-[10px] font-mono font-extrabold text-slate-700 group-hover:text-slate-900 uppercase tracking-widest">Workforce Focus</span>
-              <h3 className="text-xl font-black text-slate-950 mt-1">Manpower Contracts</h3>
-              <p className="text-xs text-slate-700 group-hover:text-slate-900/90 font-medium mb-5">Enterprise Workforce Solutions</p>
+              <span className="text-xs font-mono font-extrabold text-slate-700 group-hover:text-slate-900 uppercase tracking-widest">Workforce Focus</span>
+              <h3 className="text-2xl font-black text-slate-950 mt-1">Manpower Contracts</h3>
+              <p className="text-sm text-slate-700 group-hover:text-slate-900/90 font-medium mb-6">Enterprise Workforce Solutions</p>
               
-              <ul className="space-y-2.5 text-xs text-slate-900 font-bold">
+              <ul className="space-y-3 text-sm text-slate-900 font-bold">
                 {['Skilled manpower', 'Semi-skilled manpower', 'Support staff', 'Contract workforce', 'Workforce deployment'].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700 group-hover:text-slate-950 shrink-0" />
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-4.5 h-4.5 text-amber-700 group-hover:text-slate-950 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -165,15 +165,15 @@ export default function TenderPerformanceSection() {
 
         </div>
 
-        {/* SECTION 1: TENDER OPPORTUNITY DENSITY (KEPT & ENHANCED WITH HOVER EFFECTS) */}
+        {/* SECTION 1: TENDER OPPORTUNITY DENSITY */}
         <div className="p-8 sm:p-10 rounded-3xl bg-slate-950 border-2 border-amber-500/60 shadow-[0_0_35px_rgba(245,158,11,0.25)] hover:border-amber-400 hover:shadow-[0_0_50px_rgba(245,158,11,0.4)] transition-all duration-300">
           <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 className="text-2xl font-black text-white tracking-tight">Tender Opportunity Density</h3>
-              <p className="text-xs text-slate-400 mt-1">Demand distribution across major operational sectors.</p>
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Tender Opportunity Density</h3>
+              <p className="text-sm text-slate-400 mt-1">Demand distribution across major operational sectors.</p>
             </div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-b from-amber-300 to-amber-500 text-slate-950 text-xs font-black shadow-md cursor-pointer hover:scale-105 transition-transform">
-              <Zap className="w-3.5 h-3.5 text-slate-950" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-b from-amber-300 to-amber-500 text-slate-950 text-xs font-black shadow-md cursor-pointer hover:scale-105 transition-transform">
+              <Zap className="w-4 h-4 text-slate-950" />
               Live Market Analytics
             </div>
           </div>
@@ -181,9 +181,9 @@ export default function TenderPerformanceSection() {
           <div className="space-y-7">
             {/* Government Bar */}
             <div>
-              <div className="flex justify-between items-center text-xs mb-2">
+              <div className="flex justify-between items-center text-sm mb-2">
                 <span className="font-extrabold font-mono text-slate-200 tracking-wider flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,1)]" />
+                  <span className="w-3 h-3 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,1)]" />
                   GOVERNMENT
                 </span>
                 <span className="text-amber-400 font-black uppercase tracking-wider">88% Opportunity</span>
@@ -195,9 +195,9 @@ export default function TenderPerformanceSection() {
 
             {/* Private Bar */}
             <div>
-              <div className="flex justify-between items-center text-xs mb-2">
+              <div className="flex justify-between items-center text-sm mb-2">
                 <span className="font-extrabold font-mono text-slate-200 tracking-wider flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-slate-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                  <span className="w-3 h-3 rounded-full bg-slate-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                   PRIVATE
                 </span>
                 <span className="text-slate-200 font-black uppercase tracking-wider">76% Opportunity</span>
@@ -209,9 +209,9 @@ export default function TenderPerformanceSection() {
 
             {/* Manpower Bar */}
             <div>
-              <div className="flex justify-between items-center text-xs mb-2">
+              <div className="flex justify-between items-center text-sm mb-2">
                 <span className="font-extrabold font-mono text-slate-200 tracking-wider flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(250,204,21,1)]" />
+                  <span className="w-3 h-3 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(250,204,21,1)]" />
                   MANPOWER
                 </span>
                 <span className="text-amber-400 font-black uppercase tracking-wider">82% Demand</span>
@@ -223,11 +223,11 @@ export default function TenderPerformanceSection() {
           </div>
         </div>
 
-        {/* STEPPER CARDS (HOVER TO GOLD) */}
+        {/* STEPPER CARDS */}
         <div className="space-y-10">
           <div className="text-center">
-            <h3 className="text-3xl font-black text-white tracking-tight">The End-to-End Tender Journey</h3>
-            <p className="text-xs text-slate-400 mt-2">Structured execution framework from intelligence gather to contract fulfillment.</p>
+            <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight">The End-to-End Tender Journey</h3>
+            <p className="text-sm text-slate-400 mt-2">Structured execution framework from intelligence gather to contract fulfillment.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -241,35 +241,35 @@ export default function TenderPerformanceSection() {
             ].map((item, index) => (
               <div 
                 key={index} 
-                className={`${interactiveCard} !p-5 text-left`}
+                className={`${interactiveCard} !p-6 text-left`}
               >
-                <div className="text-2xl font-black font-mono mb-2 text-amber-600 group-hover:text-slate-950 transition-colors">
+                <div className="text-3xl font-black font-mono mb-3 text-amber-600 group-hover:text-slate-950 transition-colors">
                   {item.step}
                 </div>
                 <div>
-                  <h4 className="text-xs font-black tracking-wider mb-1 text-slate-950">{item.title}</h4>
-                  <p className="text-[11px] font-semibold text-slate-800 group-hover:text-slate-950 leading-tight">{item.desc}</p>
+                  <h4 className="text-sm font-black tracking-wider mb-1.5 text-slate-950">{item.title}</h4>
+                  <p className="text-xs font-semibold text-slate-800 group-hover:text-slate-950 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* SECTION 2: GOVERNMENT VS PRIVATE METRICS (KEPT & INNER BOXES HOVER TO GOLD) */}
+        {/* SECTION 2: GOVERNMENT VS PRIVATE METRICS */}
         <div className="p-8 sm:p-10 rounded-3xl bg-slate-950 border-2 border-amber-500/60 shadow-[0_0_35px_rgba(245,158,11,0.25)]">
           <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-8">
             <div>
-              <h3 className="text-2xl font-black text-white tracking-tight">Government vs Private Metrics</h3>
-              <p className="text-xs text-slate-400 mt-1">Comparative evaluation across bid lifecycle stages.</p>
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Government vs Private Metrics</h3>
+              <p className="text-sm text-slate-400 mt-1">Comparative evaluation across bid lifecycle stages.</p>
             </div>
             
-            <div className="flex items-center gap-6 text-xs font-mono">
+            <div className="flex items-center gap-6 text-sm font-mono">
               <div className="flex items-center gap-2">
-                <span className="w-3.5 h-3.5 rounded-md bg-gradient-to-b from-amber-300 to-amber-500 inline-block shadow-md" />
+                <span className="w-4 h-4 rounded-md bg-gradient-to-b from-amber-300 to-amber-500 inline-block shadow-md" />
                 <span className="text-slate-200 font-bold">Government</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-3.5 h-3.5 rounded-md bg-gradient-to-b from-slate-200 to-slate-400 inline-block shadow-md" />
+                <span className="w-4 h-4 rounded-md bg-gradient-to-b from-slate-200 to-slate-400 inline-block shadow-md" />
                 <span className="text-slate-200 font-bold">Private</span>
               </div>
             </div>
@@ -283,26 +283,26 @@ export default function TenderPerformanceSection() {
               { category: 'Contracts Awarded', govt: 60, pvt: 45 }
             ].map((item, idx) => (
               <div key={idx} className={interactiveCard}>
-                <span className="text-xs font-black text-slate-950 block border-b border-slate-400/60 group-hover:border-slate-900/40 pb-2 mb-3">{item.category}</span>
+                <span className="text-sm font-black text-slate-950 block border-b border-slate-400/60 group-hover:border-slate-900/40 pb-2.5 mb-4">{item.category}</span>
                 
                 {/* Government Series */}
-                <div className="space-y-1.5 mb-3">
-                  <div className="flex justify-between text-[10px] font-mono font-black text-slate-950">
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between text-xs font-mono font-black text-slate-950">
                     <span>GOVT</span>
                     <span>{item.govt}%</span>
                   </div>
-                  <div className="w-full bg-slate-300 group-hover:bg-amber-200/60 h-2.5 rounded-full overflow-hidden border border-slate-400 group-hover:border-amber-300 transition-colors">
+                  <div className="w-full bg-slate-300 group-hover:bg-amber-200/60 h-3 rounded-full overflow-hidden border border-slate-400 group-hover:border-amber-300 transition-colors">
                     <div className="bg-gradient-to-r from-amber-500 to-yellow-400 group-hover:from-slate-950 group-hover:to-slate-800 h-full rounded-full transition-colors" style={{ width: `${item.govt}%` }} />
                   </div>
                 </div>
 
                 {/* Private Series */}
-                <div className="space-y-1.5">
-                  <div className="flex justify-between text-[10px] font-mono font-black text-slate-800 group-hover:text-slate-950">
+                <div className="space-y-2">
+                  <div className="flex justify-between text-xs font-mono font-black text-slate-800 group-hover:text-slate-950">
                     <span>PVT</span>
                     <span>{item.pvt}%</span>
                   </div>
-                  <div className="w-full bg-slate-300 group-hover:bg-amber-200/60 h-2.5 rounded-full overflow-hidden border border-slate-400 group-hover:border-amber-300 transition-colors">
+                  <div className="w-full bg-slate-300 group-hover:bg-amber-200/60 h-3 rounded-full overflow-hidden border border-slate-400 group-hover:border-amber-300 transition-colors">
                     <div className="bg-gradient-to-r from-slate-500 to-slate-700 group-hover:from-amber-700 group-hover:to-amber-900 h-full rounded-full transition-colors" style={{ width: `${item.pvt}%` }} />
                   </div>
                 </div>
@@ -311,12 +311,12 @@ export default function TenderPerformanceSection() {
           </div>
         </div>
 
-        {/* WORKFORCE DEPLOYMENT SECTION (HOVER TO GOLD) */}
+        {/* WORKFORCE DEPLOYMENT SECTION */}
         <div className="p-8 sm:p-10 rounded-3xl bg-slate-950 border-2 border-amber-500/60 space-y-7 shadow-[0_0_35px_rgba(245,158,11,0.25)]">
           <div>
-            <span className="text-[10px] font-mono font-black text-amber-400 uppercase tracking-widest">Operational Fulfillment</span>
-            <h3 className="text-2xl font-black text-white mt-1">From Tender Award to Workforce Deployment</h3>
-            <p className="text-xs text-slate-400 mt-1">Systematic post-award recruitment and deployment workflow.</p>
+            <span className="text-xs font-mono font-black text-amber-400 uppercase tracking-widest">Operational Fulfillment</span>
+            <h3 className="text-2xl sm:text-3xl font-black text-white mt-1">From Tender Award to Workforce Deployment</h3>
+            <p className="text-sm text-slate-400 mt-1">Systematic post-award recruitment and deployment workflow.</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -330,11 +330,11 @@ export default function TenderPerformanceSection() {
             ].map((item, idx) => {
               const IconComp = item.icon;
               return (
-                <div key={idx} className={`${interactiveCard} !p-4 items-center text-center space-y-2`}>
-                  <div className="p-2.5 rounded-xl bg-gradient-to-b from-slate-100 to-slate-300 group-hover:from-amber-200 group-hover:to-amber-400 border border-slate-400 group-hover:border-amber-300 text-slate-900 shadow-sm transition-colors">
-                    <IconComp className="w-5 h-5 text-amber-700 group-hover:text-slate-950" />
+                <div key={idx} className={`${interactiveCard} !p-5 items-center text-center space-y-3`}>
+                  <div className="p-3 rounded-xl bg-gradient-to-b from-slate-100 to-slate-300 group-hover:from-amber-200 group-hover:to-amber-400 border border-slate-400 group-hover:border-amber-300 text-slate-900 shadow-sm transition-colors">
+                    <IconComp className="w-6 h-6 text-amber-700 group-hover:text-slate-950" />
                   </div>
-                  <span className="text-xs font-black text-slate-950">{item.stage}</span>
+                  <span className="text-sm font-black text-slate-950">{item.stage}</span>
                 </div>
               );
             })}
