@@ -118,17 +118,14 @@ export default function Footer() {
               <span>Statutory Compliance</span>
             </h4>
             <div className="space-y-2.5 text-[11px] font-mono">
-              <div className="p-2.5 rounded-xl bg-neutral-900/60 border border-zinc-800 hover:border-slate-500/40 transition-all backdrop-blur-sm">
-                <span className="text-zinc-500 block text-[9px] uppercase font-sans tracking-wider">CIN</span>
-                <span className="text-slate-100 font-semibold select-all tracking-wide">U74102UP2025PTC229488</span>
-              </div>
+              
               <div className="p-2.5 rounded-xl bg-neutral-900/60 border border-zinc-800 hover:border-slate-500/40 transition-all backdrop-blur-sm">
                 <span className="text-zinc-500 block text-[9px] uppercase font-sans tracking-wider">ROC Filing</span>
                 <span className="text-slate-300">Kanpur, India</span>
               </div>
               <div className="p-2.5 rounded-xl bg-neutral-900/60 border border-zinc-800 hover:border-slate-500/40 transition-all backdrop-blur-sm">
                 <span className="text-zinc-500 block text-[9px] uppercase font-sans tracking-wider">HQ Location</span>
-                <span className="text-slate-300 font-sans">Lakhanpur, Vikas Nagar</span>
+                <span className="text-slate-300 font-sans">Vikas Nagar, Lakhanpur, Kanpur Nagar, Uttar Pradesh — 208024, India</span>
               </div>
             </div>
           </div>

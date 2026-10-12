@@ -73,12 +73,7 @@ export default function CompanyDetails() {
                 </div>
               </div>
               <div className="space-y-3 pt-2">
-                <div className="p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
-                  <span className="text-[11px] text-slate-500 block font-medium">Corporate Identification Number (CIN)</span>
-                  <span className="text-xs sm:text-sm font-mono font-bold text-amber-800 mt-0.5 block select-all">
-                    U74102UP2025PTC229488
-                  </span>
-                </div>
+                
                 <div className="p-3 rounded-lg bg-white border border-slate-200 shadow-xs">
                   <span className="text-[11px] text-slate-500 block font-medium">Registrar of Companies (ROC)</span>
                   <span className="text-xs sm:text-sm font-semibold text-slate-800 mt-0.5 block">
