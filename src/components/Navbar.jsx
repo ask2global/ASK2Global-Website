@@ -80,18 +80,18 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
         {/* BRAND TEXT ONLY */}
         <button 
           onClick={() => handleNavClick('all')} 
-          className="flex items-center group focus:outline-none rounded-2xl p-1.5 transition-all text-left cursor-pointer active:scale-95"
+          className="flex items-center group focus:outline-none rounded-2xl p-1.5 transition-all text-left cursor-pointer active:scale-100"
           aria-label="ASK2 Global Home"
         >
           <div className="flex flex-col">
-            <span className="font-black text-lg tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 group-hover:text-amber-300 transition-colors drop-shadow-[0_2px_10px_rgba(245,158,11,0.3)]">
+            <span className="font-black text-lg sm:text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-100 group-hover:text-amber-300 transition-colors drop-shadow-[0_2px_10px_rgba(245,158,11,0.3)]">
               ASK 2 GLOBAL PVT. LTD.
             </span>
           </div>
         </button>
 
-        {/* DESKTOP NAVIGATION LINKS WITH 3D METALLIC SILVER DEFAULT & GOLDEN ACTIVE/SELECTED STATE */}
-        <nav className="hidden lg:flex items-center gap-2 xl:gap-3 text-xs font-semibold" aria-label="Main Navigation">
+        {/* DESKTOP NAVIGATION LINKS - INCREASED FONT SIZE (text-sm) */}
+        <nav className="hidden lg:flex items-center gap-2 xl:gap-3 text-sm font-semibold" aria-label="Main Navigation">
           {navLinks.map((item) => {
             const Icon = item.icon;
             const isActive = currentView === item.id;
@@ -99,7 +99,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative flex items-center gap-2 px-4 xl:px-5 py-2.5 rounded-xl transition-all duration-300 font-extrabold tracking-wider cursor-pointer border select-none ${
+                className={`relative flex items-center gap-2.5 px-4 xl:px-5.5 py-2.5 rounded-xl transition-all duration-300 font-extrabold tracking-wider cursor-pointer border select-none ${
                   isActive 
                     ? /* GOLDEN STATE WHEN CLICKED / ACTIVE */
                       'text-slate-950 bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 border-amber-200 shadow-[0_6px_0_#92400e,0_10px_20px_rgba(245,158,11,0.5)] translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_2px_0_#92400e]' 
@@ -107,7 +107,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
                       'text-slate-100 bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 text-slate-950 font-black shadow-[0_5px_0_#475569,0_8px_15px_rgba(255,255,255,0.15)] hover:from-slate-100 hover:to-slate-400 hover:border-white hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_1px_0_#475569]'
                 }`}
               >
-                <Icon className={`w-4 h-4 transition-transform duration-300 ${
+                <Icon className={`w-4.5 h-4.5 transition-transform duration-300 ${
                   isActive ? 'text-slate-950 scale-110' : 'text-slate-900 group-hover:scale-110'
                 }`} />
                 <span>{item.label}</span>
@@ -125,7 +125,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
         <div className="hidden sm:flex items-center gap-3">
           
           {/* VERIFIED BADGE */}
-          <div className="flex items-center gap-2 text-[11px] font-black tracking-wider text-amber-300 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black border border-amber-500/50 px-4 py-2 rounded-xl shadow-[0_4px_0_#78350f,0_0_15px_rgba(245,158,11,0.2)]">
+          <div className="flex items-center gap-2 text-xs font-black tracking-wider text-amber-300 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black border border-amber-500/50 px-4 py-2 rounded-xl shadow-[0_4px_0_#78350f,0_0_15px_rgba(245,158,11,0.2)]">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,1)]" />
@@ -136,10 +136,10 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
 
           {activeUser ? (
             <div className="flex items-center gap-2">
-              {/* 3D VENDOR PROFILE BUTTON (SILVER LOOK) */}
+              {/* 3D VENDOR PROFILE BUTTON */}
               <button
                 onClick={() => setShowVendorProfile(true)}
-                className="flex items-center gap-2 text-xs font-bold text-slate-950 bg-gradient-to-b from-slate-200 via-slate-300 to-slate-400 border border-slate-100 hover:border-amber-400 px-4 py-2.5 rounded-xl transition-all shadow-[0_5px_0_#475569,0_8px_15px_rgba(0,0,0,0.6)] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_1px_0_#475569] cursor-pointer"
+                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-b from-slate-200 via-slate-300 to-slate-400 border border-slate-100 hover:border-amber-400 px-4 py-2.5 rounded-xl transition-all shadow-[0_5px_0_#475569,0_8px_15px_rgba(0,0,0,0.6)] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_1px_0_#475569] cursor-pointer"
               >
                 <UserCircle2 className="w-4 h-4 text-slate-900" />
                 <span className="capitalize">{activeUser.companyName || activeUser.role || 'Vendor'}</span>
@@ -155,13 +155,13 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
               </button>
             </div>
           ) : (
-            /* 3D SILVER LOGIN BUTTON WITH SHINE ANIMATION */
+            /* 3D SILVER LOGIN BUTTON */
             <button
               onClick={() => setShowAuth(true)}
-              className="relative overflow-hidden text-xs font-black text-slate-950 bg-gradient-to-b from-slate-100 via-slate-300 to-slate-400 border border-white px-5 py-2.5 rounded-xl shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.2)] hover:bg-gradient-to-r hover:from-amber-300 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_6px_0_#92400e] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_2px_0_#475569] transition-all cursor-pointer group"
+              className="relative overflow-hidden text-xs sm:text-sm font-black text-slate-950 bg-gradient-to-b from-slate-100 via-slate-300 to-slate-400 border border-white px-5 py-2.5 rounded-xl shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.2)] hover:bg-gradient-to-r hover:from-amber-300 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_6px_0_#92400e] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_2px_0_#475569] transition-all cursor-pointer group"
             >
               <span className="relative z-10 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-slate-900 group-hover:text-slate-950" />
+                <Sparkles className="w-4 h-4 text-slate-900 group-hover:text-slate-950" />
                 Login / Sign Up
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out pointer-events-none" />
@@ -189,8 +189,8 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
           id="mobile-navigation" 
           className="lg:hidden mt-3 border border-amber-500/40 rounded-2xl bg-neutral-950/95 backdrop-blur-2xl px-4 pt-4 pb-5 space-y-3 shadow-[0_20px_40px_rgba(0,0,0,0.9)] transition-all duration-300"
         >
-          <div className="px-3 py-1.5 text-[10px] font-black text-amber-400 uppercase tracking-widest font-mono flex items-center gap-2">
-            <Sparkles className="w-3 h-3" />
+          <div className="px-3 py-1.5 text-xs font-black text-amber-400 uppercase tracking-widest font-mono flex items-center gap-2">
+            <Sparkles className="w-3.5 h-3.5" />
             Navigation Desk
           </div>
           {navLinks.map((item) => {
@@ -200,7 +200,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs font-bold transition-all border ${
+                className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-bold transition-all border ${
                   isActive
                     ? 'text-slate-950 bg-gradient-to-r from-amber-300 to-amber-500 border-amber-200 shadow-[0_4px_0_#92400e]'
                     : 'text-slate-950 bg-gradient-to-r from-slate-200 to-slate-400 border-white shadow-[0_3px_0_#475569]'
@@ -223,7 +223,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
                     setShowVendorProfile(true);
                     setMobileMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-amber-400 capitalize"
+                  className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 capitalize"
                 >
                   <UserCircle2 className="w-4 h-4 text-amber-400" />
                   {activeUser.companyName || 'Vendor Profile'}
@@ -233,7 +233,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
                     handleLogout();
                     setMobileMenuOpen(false);
                   }}
-                  className="flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-red-400"
+                  className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-red-400"
                 >
                   <LogOut className="w-4 h-4" />
                   Logout
@@ -245,7 +245,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
                   setShowAuth(true);
                   setMobileMenuOpen(false);
                 }}
-                className="w-full text-xs font-black text-slate-950 bg-gradient-to-r from-slate-100 via-slate-300 to-slate-400 border border-white px-4 py-3 rounded-xl shadow-[0_4px_0_#475569] active:translate-y-[2px]"
+                className="w-full text-sm font-black text-slate-950 bg-gradient-to-r from-slate-100 via-slate-300 to-slate-400 border border-white px-4 py-3.5 rounded-xl shadow-[0_4px_0_#475569] active:translate-y-[2px]"
               >
                 Login / Sign Up
               </button>
