@@ -36,7 +36,7 @@ export default function Footer() {
                   <img 
                     src={logoImg} 
                     alt="ASK2 GLOBAL Logo" 
-                    className="w-full h-full object-contain p-1 transform transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-full object-contain p-1 transform transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>
