@@ -20,11 +20,9 @@ import {
   MapPin,
   Building,
   Briefcase,
-  FileText,
-  Shield
+  FileText
 } from 'lucide-react';
 
-// Assets folder path verify kar lein
 import logoImg from '../assets/ask2 logo 2.jpeg'; 
 
 // LAUNCH DATE CONFIGURATION
@@ -114,9 +112,9 @@ export default function EcommercePage({ setCurrentView }) {
     { name: 'Import & Export', href: '#products' },
   ];
 
-  // Dynamic Class for Animated Golden Hover Cards
+  // Dynamic Class for Animated Golden Hover Cards with Increased Font Size
   const goldenAnimatedCardStyle = `
-    relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1.5 cursor-pointer border
+    relative overflow-hidden rounded-3xl p-8 transition-all duration-500 hover:-translate-y-1.5 cursor-pointer border
     bg-[linear-gradient(110deg,#e2e8f0,45%,#ffffff,55%,#cbd5e1)] bg-[length:200%_100%] text-slate-950 font-black border-slate-300
     shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.05)]
     hover:bg-[linear-gradient(110deg,#f59e0b,35%,#fef08a,50%,#d97706)] hover:bg-[length:200%_100%] hover:animate-gold-shimmer hover:border-amber-200
@@ -147,21 +145,21 @@ export default function EcommercePage({ setCurrentView }) {
         <div className="max-w-7xl mx-auto my-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-12">
           
           <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-neutral-900/90 border border-amber-500/40 shadow-[0_0_20px_rgba(212,175,55,0.2)] backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-spin" style={{ animationDuration: '6s' }} />
-              <span className="text-xs font-mono font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase">
+            <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-neutral-900/90 border border-amber-500/40 shadow-[0_0_20px_rgba(212,175,55,0.2)] backdrop-blur-md">
+              <Sparkles className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '6s' }} />
+              <span className="text-sm font-mono font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase">
                 ASK2GLOBAL E-COMMERCE
               </span>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-3">
               <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.08] text-white">
                 Something Big Is Coming.{' '}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 drop-shadow-[0_0_25px_rgba(245,158,11,0.3)]">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 drop-shadow-[0_0_25px_rgba(245,158,11,0.3)] pt-1">
                   Coming Soon....
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-light pt-2">
+              <p className="text-lg sm:text-xl text-slate-300 max-w-xl leading-relaxed font-light pt-2">
                 Our global e-commerce marketplace is being prepared to bring carefully selected products, trusted suppliers and seamless business connections to customers worldwide.
               </p>
             </div>
@@ -169,9 +167,9 @@ export default function EcommercePage({ setCurrentView }) {
             <div className="flex flex-wrap items-center gap-4 pt-4 w-full sm:w-auto">
               <a
                 href="#notify-section"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-black bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-amber-500/20"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-black bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-amber-500/20"
               >
-                <Mail className="w-4 h-4 text-black" />
+                <Mail className="w-4.5 h-4.5 text-black" />
                 Notify Me When We Launch
               </a>
               <button
@@ -179,15 +177,15 @@ export default function EcommercePage({ setCurrentView }) {
                   if (setCurrentView) setCurrentView('all');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider text-slate-200 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-amber-500/40 transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-semibold text-sm tracking-wider text-slate-200 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 hover:border-amber-500/40 transition-all cursor-pointer"
               >
                 Explore Our Business
-                <ArrowRight className="w-4 h-4 text-amber-400" />
+                <ArrowRight className="w-4.5 h-4.5 text-amber-400" />
               </button>
             </div>
 
             <div className="w-full pt-8 border-t border-neutral-800/80">
-              <span className="text-[10px] font-mono tracking-widest text-amber-400/80 uppercase font-bold block mb-3">
+              <span className="text-xs font-mono tracking-widest text-amber-400/80 uppercase font-bold block mb-3">
                 {LAUNCH_DATE ? 'Official Launch Countdown' : 'Launch Status'}
               </span>
 
@@ -199,23 +197,23 @@ export default function EcommercePage({ setCurrentView }) {
                     { label: 'MINUTES', val: timeLeft.minutes },
                     { label: 'SECONDS', val: timeLeft.seconds }
                   ].map((unit, idx) => (
-                    <div key={idx} className="bg-black/80 border border-amber-500/30 rounded-xl p-3 text-center shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-blur-md">
-                      <span className="block text-2xl sm:text-3xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-b from-white to-amber-200 tracking-tight">
+                    <div key={idx} className="bg-black/80 border border-amber-500/30 rounded-xl p-3.5 text-center shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-blur-md">
+                      <span className="block text-3xl sm:text-4xl font-black font-mono text-transparent bg-clip-text bg-gradient-to-b from-white to-amber-200 tracking-tight">
                         {unit.val}
                       </span>
-                      <span className="text-[9px] font-mono tracking-widest text-slate-400 uppercase mt-1 block font-semibold">
+                      <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase mt-1 block font-semibold">
                         {unit.label}
                       </span>
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-black/80 border border-amber-500/40 shadow-[0_0_20px_rgba(245,158,11,0.15)] backdrop-blur-md">
-                  <span className="relative flex h-2.5 w-2.5">
+                <div className="inline-flex items-center gap-3 px-5.5 py-3.5 rounded-xl bg-black/80 border border-amber-500/40 shadow-[0_0_20px_rgba(245,158,11,0.15)] backdrop-blur-md">
+                  <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-400" />
                   </span>
-                  <span className="font-mono text-xs font-bold tracking-widest text-amber-300 uppercase">
+                  <span className="font-mono text-sm font-bold tracking-widest text-amber-300 uppercase">
                     LAUNCH DATE TO BE ANNOUNCED
                   </span>
                 </div>
@@ -229,45 +227,45 @@ export default function EcommercePage({ setCurrentView }) {
               <div className="absolute inset-2 rounded-full border border-amber-500/25 animate-[spin_30s_linear_infinite]" />
               <div className="absolute inset-10 rounded-full border border-dashed border-amber-400/20 animate-[spin_20s_linear_infinite_reverse]" />
 
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl bg-gradient-to-br from-neutral-900/90 via-black/80 to-neutral-950/90 border border-amber-500/40 backdrop-blur-xl shadow-[0_0_50px_rgba(245,158,11,0.2)] flex flex-col items-center justify-center p-6 text-center group">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 p-[1px] shadow-lg shadow-amber-500/30 mb-4 group-hover:scale-110 transition-transform">
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl bg-gradient-to-br from-neutral-900/90 via-black/80 to-neutral-950/90 border border-amber-500/40 backdrop-blur-xl shadow-[0_0_50px_rgba(245,158,11,0.2)] flex flex-col items-center justify-center p-8 text-center group">
+                <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 p-[1px] shadow-lg shadow-amber-500/30 mb-5 group-hover:scale-110 transition-transform">
                   <div className="w-full h-full bg-black rounded-[15px] flex items-center justify-center">
-                    <ShoppingBag className="w-8 h-8 text-amber-400" />
+                    <ShoppingBag className="w-9 h-9 text-amber-400" />
                   </div>
                 </div>
 
-                <h3 className="text-xl font-extrabold text-white tracking-wide">
+                <h3 className="text-2xl font-extrabold text-white tracking-wide">
                   GLOBAL COMMERCE
                 </h3>
-                <span className="text-[10px] font-mono tracking-widest text-amber-400 uppercase mt-1">
+                <span className="text-xs font-mono tracking-widest text-amber-400 uppercase mt-1.5 font-semibold">
                   ASK2GLOBAL ECOSYSTEM
                 </span>
 
-                <div className="mt-4 flex items-center gap-2 text-[10px] font-mono text-slate-300 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">
-                  <Globe2 className="w-3 h-3 text-amber-400" />
+                <div className="mt-5 flex items-center gap-2 text-xs font-mono text-slate-300 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1.5 rounded-full">
+                  <Globe2 className="w-3.5 h-3.5 text-amber-400" />
                   <span>Borderlease Trade Engine</span>
                 </div>
               </div>
 
-              <div className="absolute -top-2 left-2 p-3 rounded-2xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-xl animate-bounce duration-[4000ms] flex items-center gap-3">
+              <div className="absolute -top-2 left-2 p-3.5 rounded-2xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-xl animate-bounce duration-[4000ms] flex items-center gap-3">
                 <Boxes className="w-5 h-5 text-amber-400" />
                 <div className="text-left">
-                  <span className="block text-[11px] font-bold text-white">Verified Inventory</span>
-                  <span className="block text-[9px] font-mono text-slate-400">Multi-Vendor Hub</span>
+                  <span className="block text-xs font-bold text-white">Verified Inventory</span>
+                  <span className="block text-[10px] font-mono text-slate-400">Multi-Vendor Hub</span>
                 </div>
               </div>
 
-              <div className="absolute -bottom-2 right-2 p-3 rounded-2xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-xl animate-bounce duration-[5000ms] flex items-center gap-3">
+              <div className="absolute -bottom-2 right-2 p-3.5 rounded-2xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-xl animate-bounce duration-[5000ms] flex items-center gap-3">
                 <Package className="w-5 h-5 text-amber-400" />
                 <div className="text-left">
-                  <span className="block text-[11px] font-bold text-white">Global Dispatch</span>
-                  <span className="block text-[9px] font-mono text-slate-400">Express Logistics</span>
+                  <span className="block text-xs font-bold text-white">Global Dispatch</span>
+                  <span className="block text-[10px] font-mono text-slate-400">Express Logistics</span>
                 </div>
               </div>
 
-              <div className="absolute top-12 -right-4 p-2.5 rounded-xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-lg flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-amber-400" />
-                <span className="text-[10px] font-mono font-bold text-amber-300">B2B Scaled</span>
+              <div className="absolute top-12 -right-4 p-3 rounded-xl bg-black/90 border border-amber-500/30 backdrop-blur-md shadow-lg flex items-center gap-2">
+                <TrendingUp className="w-4.5 h-4.5 text-amber-400" />
+                <span className="text-xs font-mono font-bold text-amber-300">B2B Scaled</span>
               </div>
             </div>
           </div>
@@ -277,21 +275,21 @@ export default function EcommercePage({ setCurrentView }) {
 
 
       {/* ================= COMING SOON CATEGORIES SECTION ================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <span className="text-xs font-mono tracking-widest text-amber-400 uppercase font-semibold">
+          <span className="text-sm font-mono tracking-widest text-amber-400 uppercase font-semibold">
             MARKETPLACE CATALOG
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
             Coming Soon Categories
           </h2>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <p className="text-slate-300 text-base leading-relaxed">
             Preview our curated sectors ahead of the platform launch. All categories are engineered for high-volume B2B supply chains and individual enterprise buyers.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((cat) => {
             const Icon = cat.icon;
             return (
@@ -301,28 +299,28 @@ export default function EcommercePage({ setCurrentView }) {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-xs font-black tracking-widest text-slate-800 group-hover:text-amber-950">
+                    <span className="font-mono text-sm font-black tracking-widest text-slate-800 group-hover:text-amber-950">
                       {cat.id}
                     </span>
-                    <span className="text-[10px] font-mono font-bold tracking-wider text-slate-950 bg-white/70 border border-slate-300 group-hover:bg-amber-950/20 group-hover:border-amber-950/40 group-hover:text-amber-950 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                    <span className="text-xs font-mono font-bold tracking-wider text-slate-950 bg-white/80 border border-slate-300 group-hover:bg-amber-950/20 group-hover:border-amber-950/40 group-hover:text-amber-950 px-3 py-1 rounded-full backdrop-blur-sm">
                       Coming Soon
                     </span>
                   </div>
 
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 mb-4 group-hover:scale-110 group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 mb-5 group-hover:scale-110 group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
+                    <Icon className="w-7 h-7" />
                   </div>
 
-                  <h3 className="text-xl font-black text-slate-950 transition-colors mb-2">
+                  <h3 className="text-2xl font-black text-slate-950 transition-colors mb-3">
                     {cat.title}
                   </h3>
 
-                  <p className="text-xs text-slate-900 group-hover:text-amber-950 leading-relaxed font-semibold">
+                  <p className="text-sm text-slate-900 group-hover:text-amber-950 leading-relaxed font-semibold">
                     {cat.desc}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-400/60 group-hover:border-amber-700/40 flex items-center justify-between text-[11px] font-mono text-slate-800 group-hover:text-amber-950 font-bold">
+                <div className="pt-6 mt-6 border-t border-slate-400/60 group-hover:border-amber-700/40 flex items-center justify-between text-xs font-mono text-slate-800 group-hover:text-amber-950 font-bold">
                   <span>Verified Supply Chain</span>
                   <span>Catalog Locked →</span>
                 </div>
@@ -335,49 +333,49 @@ export default function EcommercePage({ setCurrentView }) {
 
 
       {/* ================= GLOBAL COMMERCE SECTION ================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
-        <div className={`group ${goldenAnimatedCardStyle} p-8 sm:p-12 overflow-hidden`}>
+        <div className={`group ${goldenAnimatedCardStyle} p-10 sm:p-16 overflow-hidden`}>
           
           <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
-            <span className="text-xs font-mono tracking-widest text-slate-800 group-hover:text-amber-950 uppercase font-black">
+            <span className="text-xs sm:text-sm font-mono tracking-widest text-slate-800 group-hover:text-amber-950 uppercase font-black">
               INTERNATIONAL TRADE CORRIDOR
             </span>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">
+            <h2 className="text-4xl sm:text-6xl font-black text-slate-950 tracking-tight">
               From India to the World
             </h2>
 
-            <p className="text-slate-900 group-hover:text-amber-950 text-sm sm:text-base leading-relaxed font-semibold">
+            <p className="text-slate-900 group-hover:text-amber-950 text-base sm:text-lg leading-relaxed font-semibold">
               ASK2GLOBAL is building a connected commerce ecosystem designed to bridge businesses, products and markets across borders.
             </p>
 
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 shadow-lg group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all">
-                  <MapPin className="w-7 h-7" />
+                <div className="w-18 h-18 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 shadow-lg group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all">
+                  <MapPin className="w-8 h-8" />
                 </div>
-                <span className="mt-2 text-xs font-black tracking-wider text-slate-950">INDIA</span>
-                <span className="text-[10px] font-mono text-slate-800 group-hover:text-amber-950 uppercase font-bold">Manufacturing Hub</span>
+                <span className="mt-3 text-sm font-black tracking-wider text-slate-950">INDIA</span>
+                <span className="text-xs font-mono text-slate-800 group-hover:text-amber-950 uppercase font-bold">Manufacturing Hub</span>
               </div>
 
               <div className="flex flex-col items-center">
                 <div className="flex items-center gap-2">
-                  <span className="w-12 sm:w-24 h-[3px] bg-slate-900 group-hover:bg-amber-950 animate-pulse" />
-                  <Globe2 className="w-5 h-5 text-slate-900 group-hover:text-amber-950 animate-spin" style={{ animationDuration: '12s' }} />
-                  <span className="w-12 sm:w-24 h-[3px] bg-slate-900 group-hover:bg-amber-950 animate-pulse" />
+                  <span className="w-12 sm:w-28 h-[3px] bg-slate-900 group-hover:bg-amber-950 animate-pulse" />
+                  <Globe2 className="w-6 h-6 text-slate-900 group-hover:text-amber-950 animate-spin" style={{ animationDuration: '12s' }} />
+                  <span className="w-12 sm:w-28 h-[3px] bg-slate-900 group-hover:bg-amber-950 animate-pulse" />
                 </div>
-                <span className="mt-2 text-[10px] font-mono text-slate-900 group-hover:text-amber-950 uppercase tracking-widest font-black">
+                <span className="mt-3 text-xs font-mono text-slate-900 group-hover:text-amber-950 uppercase tracking-widest font-black">
                   Escrow Secured Corridor
                 </span>
               </div>
 
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 shadow-lg group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all">
-                  <Globe2 className="w-7 h-7" />
+                <div className="w-18 h-18 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 shadow-lg group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all">
+                  <Globe2 className="w-8 h-8" />
                 </div>
-                <span className="mt-2 text-xs font-black tracking-wider text-slate-950">GLOBAL MARKETS</span>
-                <span className="text-[10px] font-mono text-slate-800 group-hover:text-amber-950 uppercase font-bold">Worldwide Buyers</span>
+                <span className="mt-3 text-sm font-black tracking-wider text-slate-950">GLOBAL MARKETS</span>
+                <span className="text-xs font-mono text-slate-800 group-hover:text-amber-950 uppercase font-bold">Worldwide Buyers</span>
               </div>
             </div>
 
@@ -389,13 +387,13 @@ export default function EcommercePage({ setCurrentView }) {
 
 
       {/* ================= WHY WAIT SECTION ================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
-        <div className="text-center max-w-xl mx-auto mb-14 space-y-2">
-          <span className="text-xs font-mono tracking-widest text-amber-400 uppercase font-semibold">
+        <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
+          <span className="text-sm font-mono tracking-widest text-amber-400 uppercase font-semibold">
             OUR ARCHITECTURE
           </span>
-          <h2 className="text-3xl font-black text-white tracking-tight">
+          <h2 className="text-4xl font-black text-white tracking-tight">
             Why Wait For ASK2GLOBAL?
           </h2>
         </div>
@@ -406,15 +404,15 @@ export default function EcommercePage({ setCurrentView }) {
             return (
               <div 
                 key={idx} 
-                className={`group ${goldenAnimatedCardStyle} text-left space-y-4`}
+                className={`group ${goldenAnimatedCardStyle} text-left space-y-5`}
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
-                  <Icon className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
+                  <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-lg font-black text-slate-950 tracking-wide">
+                <h3 className="text-xl font-black text-slate-950 tracking-wide">
                   {feat.title}
                 </h3>
-                <p className="text-xs text-slate-900 group-hover:text-amber-950 leading-relaxed font-semibold">
+                <p className="text-sm text-slate-900 group-hover:text-amber-950 leading-relaxed font-semibold">
                   {feat.description}
                 </p>
               </div>
@@ -426,48 +424,48 @@ export default function EcommercePage({ setCurrentView }) {
 
 
       {/* ================= EMAIL NOTIFICATION FORM ================= */}
-      <section id="notify-section" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
+      <section id="notify-section" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-neutral-900">
         
-        <div className={`group ${goldenAnimatedCardStyle} max-w-2xl mx-auto text-center space-y-6 p-8 sm:p-12`}>
-          <div className="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 mx-auto group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
-            <Mail className="w-6 h-6" />
+        <div className={`group ${goldenAnimatedCardStyle} max-w-2xl mx-auto text-center space-y-6 p-10 sm:p-14`}>
+          <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-100 mx-auto group-hover:bg-amber-950 group-hover:border-amber-800 group-hover:text-amber-300 transition-all shadow-md">
+            <Mail className="w-7 h-7" />
           </div>
 
-          <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-950">
+          <div className="space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950">
               Be the first to know.
             </h2>
-            <p className="text-xs sm:text-sm text-slate-900 group-hover:text-amber-950 font-semibold max-w-md mx-auto">
+            <p className="text-sm sm:text-base text-slate-900 group-hover:text-amber-950 font-semibold max-w-lg mx-auto">
               Subscribe to get exclusive early access and launch updates straight to your inbox.
             </p>
           </div>
 
           {isSubmitted ? (
-            <div className="p-4 rounded-xl bg-slate-900 text-amber-300 text-xs font-extrabold flex items-center justify-center gap-2 border border-slate-700 shadow-md">
-              <CheckCircle2 className="w-4 h-4 text-amber-400" />
+            <div className="p-5 rounded-2xl bg-slate-900 text-amber-300 text-sm font-extrabold flex items-center justify-center gap-2.5 border border-slate-700 shadow-md">
+              <CheckCircle2 className="w-5 h-5 text-amber-400" />
               Thank you! We'll keep you updated.
             </div>
           ) : (
-            <form onSubmit={handleNotifySubmit} className="space-y-3 max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-2">
+            <form onSubmit={handleNotifySubmit} className="space-y-3 max-w-lg mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-100 text-xs focus:outline-none focus:border-amber-400 placeholder:text-slate-500 transition-colors font-medium"
+                  className="w-full px-5 py-3.5 rounded-2xl bg-slate-950 border border-slate-800 text-slate-100 text-sm focus:outline-none focus:border-amber-400 placeholder:text-slate-500 transition-colors font-medium"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-xl text-xs font-black text-slate-100 bg-slate-900 border border-slate-700 hover:bg-black hover:text-amber-300 transition-all shadow-md flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+                  className="px-7 py-3.5 rounded-2xl text-sm font-black text-slate-100 bg-slate-900 border border-slate-700 hover:bg-black hover:text-amber-300 transition-all shadow-md flex items-center justify-center gap-2.5 shrink-0 cursor-pointer"
                 >
                   Notify Me
-                  <Send className="w-3.5 h-3.5" />
+                  <Send className="w-4 h-4" />
                 </button>
               </div>
 
               {errorMessage && (
-                <p className="text-[11px] text-red-700 font-mono text-left pl-1 font-extrabold">
+                <p className="text-xs text-red-700 font-mono text-left pl-1 font-extrabold">
                   {errorMessage}
                 </p>
               )}
@@ -478,24 +476,21 @@ export default function EcommercePage({ setCurrentView }) {
       </section>
 
 
-      {/* ================= UPDATED FOOTER (FROM FOOTER.JSX) ================= */}
+      {/* ================= UPDATED FOOTER ================= */}
       <footer 
         id="footer" 
-        className="relative w-full bg-black text-zinc-400 text-xs border-t border-amber-500/20 font-sans overflow-hidden select-none"
+        className="relative w-full bg-black text-zinc-300 text-sm border-t border-amber-500/20 font-sans overflow-hidden select-none"
       >
-        {/* Dynamic Animated Gold/Silver Radial Glow Background */}
         <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_50%_-20%,#f59e0b_0%,transparent_50%)] animate-pulse duration-1000" />
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:20px_20px]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-          {/* 5-Column Grid Breakdown */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             
             {/* Brand Info */}
             <div className="space-y-5 group sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-3">
-                {/* Logo Box - Prominent Size & High Glow */}
-                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_35px_rgba(245,158,11,0.5)] shrink-0">
+                <div className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all duration-500 group-hover:scale-105 shrink-0">
                   <div className="w-full h-full bg-black rounded-[14px] overflow-hidden flex items-center justify-center">
                     <img 
                       src={logoImg} 
@@ -506,32 +501,32 @@ export default function EcommercePage({ setCurrentView }) {
                 </div>
 
                 <div>
-                  <span className="font-black text-white text-base sm:text-lg tracking-tight block group-hover:text-amber-300 transition-colors leading-snug">
+                  <span className="font-black text-white text-lg sm:text-xl tracking-tight block group-hover:text-amber-300 transition-colors leading-snug">
                     ASK2 GLOBAL
                   </span>
-                  <span className="text-[11px] text-amber-400/80 font-mono tracking-widest uppercase block mt-0.5 font-semibold">
+                  <span className="text-xs text-amber-400/80 font-mono tracking-widest uppercase block mt-0.5 font-semibold">
                     Pvt. Ltd.
                   </span>
                 </div>
               </div>
 
-              <p className="text-[12px] text-zinc-400 leading-relaxed font-light">
+              <p className="text-zinc-300 leading-relaxed font-light text-sm">
                 International enterprise procurement, tender execution, and bulk commodities distribution network.
               </p>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-neutral-900/80 border border-amber-500/30 text-[11px] text-amber-300 shadow-inner backdrop-blur-md transition-all hover:border-amber-400/60">
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-                <span className="font-mono text-[10px] tracking-wider uppercase font-semibold">Verified Legal Entity</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-900/80 border border-amber-500/30 text-xs text-amber-300 shadow-inner backdrop-blur-md">
+                <ShieldCheck className="w-4 h-4 text-amber-400 animate-pulse" />
+                <span className="font-mono text-[11px] tracking-wider uppercase font-semibold">Verified Legal Entity</span>
               </div>
             </div>
 
             {/* Core Divisions */}
             <div>
-              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
-                <Building className="w-3.5 h-3.5 text-amber-400" />
+              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                <Building className="w-4 h-4 text-amber-400" />
                 <span>Core Divisions</span>
               </h4>
-              <ul className="space-y-2.5 text-[12px]">
+              <ul className="space-y-3 text-sm">
                 {[
                   { name: 'B2B Commodity Desk', href: '#products' },
                   { name: 'State Procurement Portal', href: '#tenders' },
@@ -544,9 +539,9 @@ export default function EcommercePage({ setCurrentView }) {
                   <li key={idx}>
                     <a 
                       href={item.href} 
-                      className="text-zinc-400 hover:text-amber-300 transition-all duration-300 flex items-center gap-2 group/link"
+                      className="text-zinc-300 hover:text-amber-300 transition-all duration-300 flex items-center gap-2.5 group/link"
                     >
-                      <ArrowRight className="w-3 h-3 text-amber-500/50 group-hover/link:text-amber-400 group-hover/link:translate-x-1 transition-all" />
+                      <ArrowRight className="w-3.5 h-3.5 text-amber-500/50 group-hover/link:text-amber-400 group-hover/link:translate-x-1 transition-all" />
                       <span className="group-hover/link:translate-x-0.5 transition-all truncate">{item.name}</span>
                     </a>
                   </li>
@@ -556,18 +551,18 @@ export default function EcommercePage({ setCurrentView }) {
 
             {/* Our Services Section */}
             <div>
-              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
-                <Briefcase className="w-3.5 h-3.5 text-amber-400" />
+              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                <Briefcase className="w-4 h-4 text-amber-400" />
                 <span>Our Services</span>
               </h4>
-              <ul className="space-y-2.5 text-[12px]">
+              <ul className="space-y-3 text-sm">
                 {services.map((item, idx) => (
                   <li key={idx}>
                     <a 
                       href={item.href} 
-                      className="text-zinc-400 hover:text-amber-300 transition-all duration-300 flex items-center gap-2 group/link"
+                      className="text-zinc-300 hover:text-amber-300 transition-all duration-300 flex items-center gap-2.5 group/link"
                     >
-                      <ArrowRight className="w-3 h-3 text-amber-500/50 group-hover/link:text-amber-400 group-hover/link:translate-x-1 transition-all" />
+                      <ArrowRight className="w-3.5 h-3.5 text-amber-500/50 group-hover/link:text-amber-400 group-hover/link:translate-x-1 transition-all" />
                       <span className="group-hover/link:translate-x-0.5 transition-all truncate">{item.name}</span>
                     </a>
                   </li>
@@ -577,51 +572,51 @@ export default function EcommercePage({ setCurrentView }) {
 
             {/* Statutory Compliance */}
             <div>
-              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
-                <FileText className="w-3.5 h-3.5 text-slate-300" />
+              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                <FileText className="w-4 h-4 text-slate-300" />
                 <span>Statutory Compliance</span>
               </h4>
-              <div className="space-y-2.5 text-[11px] font-mono">
-                <div className="p-2.5 rounded-xl bg-neutral-900/60 border border-zinc-800 hover:border-slate-500/40 transition-all backdrop-blur-sm">
-                  <span className="text-zinc-500 block text-[9px] uppercase font-sans tracking-wider">CIN</span>
+              <div className="space-y-3 text-xs font-mono">
+                <div className="p-3 rounded-xl bg-neutral-900/60 border border-zinc-800">
+                  <span className="text-zinc-400 block text-[10px] uppercase font-sans tracking-wider">CIN</span>
                   <span className="text-slate-100 font-semibold select-all tracking-wide">U74102UP2025PTC229488</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900/60 border border-zinc-800 hover:border-slate-500/40 transition-all backdrop-blur-sm">
-                  <span className="text-zinc-500 block text-[9px] uppercase font-sans tracking-wider">ROC Filing</span>
-                  <span className="text-slate-300">Kanpur, India</span>
+                <div className="p-3 rounded-xl bg-neutral-900/60 border border-zinc-800">
+                  <span className="text-zinc-400 block text-[10px] uppercase font-sans tracking-wider">ROC Filing</span>
+                  <span className="text-slate-200">Kanpur, India</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900/60 border border-zinc-800 hover:border-slate-500/40 transition-all backdrop-blur-sm">
-                  <span className="text-zinc-500 block text-[9px] uppercase font-sans tracking-wider">HQ Location</span>
-                  <span className="text-slate-300 font-sans">Lakhanpur, Vikas Nagar</span>
+                <div className="p-3 rounded-xl bg-neutral-900/60 border border-zinc-800">
+                  <span className="text-zinc-400 block text-[10px] uppercase font-sans tracking-wider">HQ Location</span>
+                  <span className="text-slate-200 font-sans text-xs">Lakhanpur, Vikas Nagar</span>
                 </div>
               </div>
             </div>
 
             {/* Contact Trade Desk */}
             <div>
-              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-[11px] flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-amber-400" />
+              <h4 className="font-bold text-white mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                <Mail className="w-4 h-4 text-amber-400" />
                 <span>Contact Trade Desk</span>
               </h4>
-              <div className="space-y-3 text-[12px]">
-                <div className="p-3 rounded-xl bg-neutral-900/90 border border-amber-500/20 hover:border-amber-500/50 transition-all group/card shadow-lg backdrop-blur-md">
-                  <span className="text-[9px] uppercase tracking-widest text-zinc-500 block mb-1 font-mono">Commercial Contracts</span>
+              <div className="space-y-3.5 text-sm">
+                <div className="p-3.5 rounded-xl bg-neutral-900/90 border border-amber-500/20">
+                  <span className="text-[10px] uppercase tracking-widest text-zinc-400 block mb-1 font-mono">Commercial Contracts</span>
                   <a 
                     href="mailto:procurement@ask2global.com" 
-                    className="font-mono text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-2 text-[11px] truncate"
+                    className="font-mono text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-2.5 text-xs truncate"
                   >
-                    <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0 group-hover/card:scale-110 transition-transform" />
+                    <Mail className="w-4 h-4 text-amber-400 shrink-0" />
                     <span className="truncate">procurement@ask2global.com</span>
                   </a>
                 </div>
 
-                <div className="p-3 rounded-xl bg-neutral-900/90 border border-amber-500/20 hover:border-amber-500/50 transition-all group/card shadow-lg backdrop-blur-md">
-                  <span className="text-[9px] uppercase tracking-widest text-zinc-500 block mb-1 font-mono">Official Mail</span>
+                <div className="p-3.5 rounded-xl bg-neutral-900/90 border border-amber-500/20">
+                  <span className="text-[10px] uppercase tracking-widest text-zinc-400 block mb-1 font-mono">Official Mail</span>
                   <a 
                     href="mailto:ask2global@gmail.com" 
-                    className="font-mono text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-2 text-[11px] truncate"
+                    className="font-mono text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-2.5 text-xs truncate"
                   >
-                    <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0 group-hover/card:scale-110 transition-transform" />
+                    <Mail className="w-4 h-4 text-amber-400 shrink-0" />
                     <span className="truncate">ask2global@gmail.com</span>
                   </a>
                 </div>
@@ -630,16 +625,15 @@ export default function EcommercePage({ setCurrentView }) {
 
           </div>
 
-          {/* Disclaimer & Copyright Bottom Bar */}
-          <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-4">
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <p>© 2025 ASK2Global Private Limited. All rights reserved</p>
+          <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 gap-4">
+            <div className="flex items-center gap-2 text-zinc-300">
+              <Sparkles className="w-4 h-4 text-amber-400" />
+              <p>© 2025 ASK2Global Private Limited. All rights reserved[cite: 8].</p>
             </div>
             <div className="flex items-center gap-3">
               <span className="hidden sm:inline text-zinc-700">•</span>
-              <p className="text-zinc-400 text-center sm:text-right font-light">
-                Strictly for institutional, public sector, and commercial wholesale trade.
+              <p className="text-zinc-300 text-center sm:text-right font-light">
+                Strictly for institutional, public sector, and commercial wholesale trade[cite: 8].
               </p>
             </div>
           </div>

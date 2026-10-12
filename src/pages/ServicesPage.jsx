@@ -19,7 +19,6 @@ import {
   Layers
 } from 'lucide-react';
 
-// Import image logo
 import ask2Logo from '../assets/ask2 logo 2.jpeg';
 
 // Exactly 9 Approved Services Data
@@ -164,10 +163,7 @@ const serviceCategories = [
 
 export default function ServicesPage({ onContactClick }) {
   const [activeModalService, setActiveModalService] = useState(null);
-  
-  // States for explicit hover tracking
   const [hoveredCardId, setHoveredCardId] = useState(null);
-  const [hoveredEcosystemId, setHoveredEcosystemId] = useState(null);
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -186,8 +182,8 @@ export default function ServicesPage({ onContactClick }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-semibold tracking-wider uppercase backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-mono font-semibold tracking-wider uppercase backdrop-blur-md">
+              <Sparkles className="w-4 h-4" />
               <span>ASK2GLOBAL BUSINESS SERVICES</span>
             </div>
 
@@ -198,22 +194,22 @@ export default function ServicesPage({ onContactClick }) {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
               Integrated business solutions connecting licensing, finance, technology, procurement, sales channels and supply chain capabilities.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-4 pt-3">
               <button 
                 onClick={() => scrollToSection('services-grid')}
-                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-extrabold text-sm tracking-wide shadow-lg shadow-amber-500/20 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 group cursor-pointer"
+                className="px-7 py-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-extrabold text-sm sm:text-base tracking-wide shadow-lg shadow-amber-500/20 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2.5 group cursor-pointer"
               >
                 <span>Explore Our Services</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button 
                 onClick={() => onContactClick ? onContactClick() : scrollToSection('contact-section')}
-                className="px-6 py-3.5 rounded-xl bg-neutral-900/90 hover:bg-neutral-800 border border-amber-500/30 hover:border-amber-400 text-slate-200 font-bold text-sm tracking-wide transition-all duration-300 backdrop-blur-md cursor-pointer"
+                className="px-7 py-4 rounded-xl bg-neutral-900/90 hover:bg-neutral-800 border border-amber-500/30 hover:border-amber-400 text-slate-200 font-bold text-sm sm:text-base tracking-wide transition-all duration-300 backdrop-blur-md cursor-pointer"
               >
                 Talk to Our Team
               </button>
@@ -265,20 +261,20 @@ export default function ServicesPage({ onContactClick }) {
                   <div 
                     key={s.id}
                     style={{ transform: `translate(${x}px, ${y}px)` }}
-                    className="absolute p-2.5 rounded-xl bg-gradient-to-b from-slate-100 to-slate-300 text-slate-800 border-2 border-slate-400 shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 hover:text-black hover:border-amber-300 hover:shadow-[0_0_25px_rgba(245,158,11,0.8)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer z-30"
+                    className="absolute p-3 rounded-xl bg-gradient-to-b from-slate-100 to-slate-300 text-slate-800 border-2 border-slate-400 shadow-[0_10px_20px_rgba(0,0,0,0.5)] hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 hover:text-black hover:border-amber-300 hover:shadow-[0_0_25px_rgba(245,158,11,0.8)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer z-30"
                     title={s.title}
                     onClick={() => setActiveModalService(s)}
                   >
-                    <s.icon className="w-4 h-4 text-slate-800 group-hover:text-black transition-colors" />
+                    <s.icon className="w-5 h-5 text-slate-800 group-hover:text-black transition-colors" />
                     
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded-md bg-black/95 border border-amber-500/40 text-[10px] font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-40">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 rounded-md bg-black/95 border border-amber-500/40 text-xs font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-40">
                       {s.title}
                     </span>
                   </div>
                 );
               })}
 
-              <div className="absolute -bottom-2 bg-black/95 border border-amber-500/50 px-4 py-1.5 rounded-full text-[11px] font-mono font-bold text-amber-300 tracking-wider uppercase shadow-lg backdrop-blur-md z-30">
+              <div className="absolute -bottom-2 bg-black/95 border border-amber-500/50 px-5 py-2 rounded-full text-xs font-mono font-bold text-amber-300 tracking-wider uppercase shadow-lg backdrop-blur-md z-30">
                 ONE BUSINESS ECOSYSTEM
               </div>
 
@@ -291,12 +287,12 @@ export default function ServicesPage({ onContactClick }) {
       {/* ==================================================
           SERVICES SECTION (CURSOR JISPE HO WOH GOLDEN, BAKI SILVER)
       ================================================== */}
-      <section id="services-grid" className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+      <section id="services-grid" className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             OUR BUSINESS SERVICES
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-300 text-base sm:text-lg">
             Integrated solutions designed to simplify business operations and unlock new opportunities.
           </p>
         </div>
@@ -312,25 +308,23 @@ export default function ServicesPage({ onContactClick }) {
                 onMouseEnter={() => setHoveredCardId(item.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
                 onClick={() => setActiveModalService(item)}
-                className={`relative rounded-2xl p-6 flex flex-col justify-between cursor-pointer transition-all duration-300 transform-gpu ${
+                className={`relative rounded-3xl p-8 flex flex-col justify-between cursor-pointer transition-all duration-300 transform-gpu ${
                   isHovered
-                    ? /* GOLDEN STATE WHEN CURSOR IS ON THIS CARD */
-                      'bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#d97706] border-2 border-amber-200 text-black shadow-[0_0_35px_rgba(245,158,11,0.8),0_15px_35px_rgba(245,158,11,0.5)] -translate-y-2 scale-[1.02] z-20'
-                    : /* SILVER METALLIC STATE WHEN NOT HOVERED */
-                      'bg-gradient-to-b from-[#e2e8f0] via-[#cbd5e1] to-[#94a3b8] border-2 border-slate-300/80 text-slate-900 shadow-[0_10px_25px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.9)]'
+                    ? 'bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#d97706] border-2 border-amber-200 text-black shadow-[0_0_35px_rgba(245,158,11,0.8),0_15px_35px_rgba(245,158,11,0.5)] -translate-y-2 scale-[1.02] z-20'
+                    : 'bg-gradient-to-b from-[#e2e8f0] via-[#cbd5e1] to-[#94a3b8] border-2 border-slate-300/80 text-slate-900 shadow-[0_10px_25px_rgba(0,0,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.9)]'
                 }`}
               >
                 <div>
                   {/* Top Badges */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-lg border transition-colors ${
+                  <div className="flex items-center justify-between mb-5">
+                    <span className={`text-xs sm:text-sm font-mono font-bold px-3 py-1 rounded-lg border transition-colors ${
                       isHovered 
                         ? 'bg-black/20 text-amber-100 border-amber-200/40' 
                         : 'text-amber-900 bg-amber-400/20 border-amber-500/30'
                     }`}>
                       #{item.id}
                     </span>
-                    <span className={`text-[10px] font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded-lg border transition-colors ${
+                    <span className={`text-xs font-mono font-bold tracking-wider uppercase px-3 py-1 rounded-lg border transition-colors ${
                       isHovered 
                         ? 'text-black bg-amber-300/30 border-amber-900/30' 
                         : 'text-slate-800 bg-slate-900/10 border-slate-400/50'
@@ -340,22 +334,22 @@ export default function ServicesPage({ onContactClick }) {
                   </div>
 
                   {/* Icon Box */}
-                  <div className={`w-12 h-12 rounded-xl border flex items-center justify-center shadow-md transition-all duration-300 mb-4 ${
+                  <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center shadow-md transition-all duration-300 mb-5 ${
                     isHovered 
                       ? 'bg-black/20 border-amber-200 text-white' 
                       : 'bg-slate-100 border-slate-300 text-slate-900'
                   }`}>
-                    <IconComponent className="w-6 h-6" />
+                    <IconComponent className="w-7 h-7" />
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className={`text-xl font-black mb-2 transition-colors ${
+                  <h3 className={`text-2xl font-black mb-3 transition-colors ${
                     isHovered ? 'text-black' : 'text-slate-900'
                   }`}>
                     {item.title}
                   </h3>
 
-                  <p className={`text-sm leading-relaxed font-medium mb-6 transition-colors ${
+                  <p className={`text-base sm:text-lg leading-relaxed font-medium mb-8 transition-colors ${
                     isHovered ? 'text-slate-950 font-semibold' : 'text-slate-700'
                   }`}>
                     {item.description}
@@ -363,13 +357,13 @@ export default function ServicesPage({ onContactClick }) {
                 </div>
 
                 {/* Card Footer */}
-                <div className={`pt-4 border-t flex items-center justify-between text-xs font-extrabold transition-colors ${
+                <div className={`pt-5 border-t flex items-center justify-between text-sm sm:text-base font-extrabold transition-colors ${
                   isHovered 
                     ? 'border-amber-900/30 text-black' 
                     : 'border-slate-400/50 text-slate-900'
                 }`}>
                   <span>Explore Service</span>
-                  <ArrowRight className={`w-4 h-4 transition-transform ${isHovered ? 'translate-x-1.5' : ''}`} />
+                  <ArrowRight className={`w-5 h-5 transition-transform ${isHovered ? 'translate-x-1.5' : ''}`} />
                 </div>
               </div>
             );
@@ -377,27 +371,22 @@ export default function ServicesPage({ onContactClick }) {
         </div>
       </section>
 
-      {/* ==================================================
-          BUSINESS ECOSYSTEM SECTION (HOVERED = GOLD, OTHERS = DIM SILVER)
-      ================================================== */}
-      
-
       {/* HOW WE SUPPORT YOUR BUSINESS */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl font-extrabold text-white tracking-tight">
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             HOW WE SUPPORT YOUR BUSINESS
           </h2>
-          <p className="text-slate-400 text-sm mt-2">
+          <p className="text-slate-300 text-base mt-2">
             A structured 5-step strategic framework driving operational excellence.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
           {processSteps.map((step, idx) => (
             <div 
               key={step.num} 
-              className="group relative p-5 rounded-2xl 
+              className="group relative p-6 rounded-3xl 
                 bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 
                 border-2 border-slate-300 shadow-[0_8px_20px_rgba(0,0,0,0.4)] 
                 hover:bg-gradient-to-r hover:from-amber-400 hover:via-amber-500 hover:to-amber-600 
@@ -406,16 +395,16 @@ export default function ServicesPage({ onContactClick }) {
                 flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-700 group-hover:bg-black group-hover:border-amber-300 flex items-center justify-center font-mono font-bold text-amber-400 text-sm mb-4 transition-colors">
+                <div className="w-12 h-12 rounded-full bg-slate-900 border border-slate-700 group-hover:bg-black group-hover:border-amber-300 flex items-center justify-center font-mono font-bold text-amber-400 text-base mb-5 transition-colors">
                   {step.num}
                 </div>
-                <h3 className="text-base font-black text-slate-900 group-hover:text-black transition-colors mb-2 tracking-wide">{step.title}</h3>
-                <p className="text-xs text-slate-800 group-hover:text-slate-950 font-medium transition-colors leading-relaxed">{step.desc}</p>
+                <h3 className="text-lg font-black text-slate-900 group-hover:text-black transition-colors mb-3 tracking-wide">{step.title}</h3>
+                <p className="text-sm text-slate-800 group-hover:text-slate-950 font-medium transition-colors leading-relaxed">{step.desc}</p>
               </div>
 
               {idx < processSteps.length - 1 && (
-                <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-slate-500 group-hover:text-amber-200 transition-colors">
-                  <ChevronRight className="w-6 h-6" />
+                <div className="hidden md:block absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 text-slate-500 group-hover:text-amber-200 transition-colors">
+                  <ChevronRight className="w-7 h-7" />
                 </div>
               )}
             </div>
@@ -424,44 +413,44 @@ export default function ServicesPage({ onContactClick }) {
       </section>
 
       {/* SERVICE CATEGORIES SECTION */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl font-extrabold text-white tracking-tight">
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             SERVICE CATEGORIES
           </h2>
-          <p className="text-slate-400 text-sm mt-2">
+          <p className="text-slate-300 text-base mt-2">
             Broad operational domains categorized for specialized enterprise requirements.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {serviceCategories.map((cat, i) => {
             const CatIcon = cat.icon;
             return (
               <div 
                 key={i} 
-                className="group p-6 rounded-2xl 
+                className="group p-8 rounded-3xl 
                   bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 
                   border-2 border-slate-300 shadow-[0_10px_25px_rgba(0,0,0,0.4)] 
                   hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 
                   hover:border-amber-200 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] 
                   transition-all duration-300 transform-gpu hover:-translate-y-1.5 
-                  space-y-4"
+                  space-y-5"
               >
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-xl bg-slate-900 border border-slate-700 group-hover:bg-black group-hover:border-amber-300 text-amber-400 transition-all">
-                    <CatIcon className="w-6 h-6" />
+                <div className="flex items-center gap-4">
+                  <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-700 group-hover:bg-black group-hover:border-amber-300 text-amber-400 transition-all">
+                    <CatIcon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-lg font-black text-slate-900 group-hover:text-black transition-colors tracking-wide">{cat.title}</h3>
+                  <h3 className="text-xl font-black text-slate-900 group-hover:text-black transition-colors tracking-wide">{cat.title}</h3>
                 </div>
 
-                <p className="text-xs text-slate-800 font-medium leading-relaxed">{cat.desc}</p>
+                <p className="text-sm text-slate-800 font-medium leading-relaxed">{cat.desc}</p>
 
-                <div className="space-y-2 pt-2">
-                  <span className="text-[10px] font-mono text-slate-700 uppercase tracking-wider font-bold">Key Services:</span>
-                  <div className="flex flex-wrap gap-2">
+                <div className="space-y-2.5 pt-2">
+                  <span className="text-xs font-mono text-slate-700 uppercase tracking-wider font-bold">Key Services:</span>
+                  <div className="flex flex-wrap gap-2.5">
                     {cat.services.map((s, sIdx) => (
-                      <span key={sIdx} className="text-xs font-bold text-slate-900 group-hover:text-black bg-slate-900/10 group-hover:bg-black/10 border border-slate-400/50 group-hover:border-amber-900/30 px-2.5 py-1 rounded-md transition-colors">
+                      <span key={sIdx} className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-black bg-slate-900/10 group-hover:bg-black/10 border border-slate-400/50 group-hover:border-amber-900/30 px-3 py-1.5 rounded-lg transition-colors">
                         {s}
                       </span>
                     ))}
@@ -474,32 +463,32 @@ export default function ServicesPage({ onContactClick }) {
       </section>
 
       {/* PREVIEWS & CONTACT CTA */}
-      <section id="contact-section" className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
-        <div className="rounded-3xl bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border border-amber-500/40 p-8 sm:p-14 text-center space-y-6 relative overflow-hidden shadow-2xl">
+      <section id="contact-section" className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+        <div className="rounded-3xl bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border border-amber-500/40 p-10 sm:p-16 text-center space-y-6 relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.15),transparent_70%)] pointer-events-none" />
           
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white max-w-2xl mx-auto leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white max-w-3xl mx-auto leading-tight">
             From Business Requirement to <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500">
               Business Opportunity.
             </span>
           </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             ASK2GLOBAL brings multiple business capabilities together through one connected ecosystem. Tell us what you need, and our team will identify the right solution.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-5 pt-4">
             <button
               onClick={() => onContactClick ? onContactClick() : alert('Redirecting to discussion portal...')}
-              className="px-8 py-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-extrabold text-sm tracking-wide shadow-xl shadow-amber-500/25 hover:scale-105 transition-all cursor-pointer"
+              className="px-9 py-4.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-extrabold text-base tracking-wide shadow-xl shadow-amber-500/25 hover:scale-105 transition-all cursor-pointer"
             >
               Discuss Your Requirement
             </button>
 
             <a
               href="mailto:ask2global@gmail.com?subject=Business Inquiry - ASK2GLOBAL&body=Hello ASK2GLOBAL Team,"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-neutral-900 border border-amber-500/40 text-slate-200 hover:text-white font-bold text-sm tracking-wide hover:bg-neutral-800 transition-all cursor-pointer shadow-lg hover:border-amber-400"
+              className="inline-flex items-center justify-center px-9 py-4.5 rounded-xl bg-neutral-900 border border-amber-500/40 text-slate-200 hover:text-white font-bold text-base tracking-wide hover:bg-neutral-800 transition-all cursor-pointer shadow-lg hover:border-amber-400"
             >
               Contact ASK2GLOBAL
             </a>
@@ -510,59 +499,59 @@ export default function ServicesPage({ onContactClick }) {
       {/* SERVICE DETAIL MODAL */}
       {activeModalService && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-neutral-900 border border-amber-500/40 rounded-2xl w-full max-w-2xl p-6 sm:p-8 relative shadow-2xl text-slate-100 max-h-[90vh] overflow-y-auto">
+          <div className="bg-neutral-900 border border-amber-500/40 rounded-3xl w-full max-w-2xl p-8 sm:p-10 relative shadow-2xl text-slate-100 max-h-[90vh] overflow-y-auto">
             
             <button
               onClick={() => setActiveModalService(null)}
-              className="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors cursor-pointer"
+              className="absolute top-6 right-6 text-slate-400 hover:text-white p-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-4 pb-6 mb-6 border-b border-neutral-800">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                {React.createElement(activeModalService.icon, { className: 'w-7 h-7' })}
+              <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
+                {React.createElement(activeModalService.icon, { className: 'w-8 h-8' })}
               </div>
               <div>
-                <span className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/20">
+                <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-md border border-amber-500/20">
                   {activeModalService.tag}
                 </span>
-                <h3 className="text-2xl font-bold text-white mt-1">{activeModalService.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1.5">{activeModalService.title}</h3>
               </div>
             </div>
 
-            <div className="space-y-5 text-xs sm:text-sm">
-              <div className="p-4 bg-black/60 border border-neutral-800 rounded-xl space-y-1">
-                <span className="text-amber-400 font-mono font-bold uppercase text-[11px] block">Overview</span>
+            <div className="space-y-6 text-sm sm:text-base">
+              <div className="p-5 bg-black/60 border border-neutral-800 rounded-2xl space-y-1.5">
+                <span className="text-amber-400 font-mono font-bold uppercase text-xs block">Overview</span>
                 <p className="text-slate-300 leading-relaxed">{activeModalService.description}</p>
               </div>
 
-              <div className="p-4 bg-black/60 border border-neutral-800 rounded-xl space-y-1">
-                <span className="text-amber-400 font-mono font-bold uppercase text-[11px] block">What We Provide</span>
+              <div className="p-5 bg-black/60 border border-neutral-800 rounded-2xl space-y-1.5">
+                <span className="text-amber-400 font-mono font-bold uppercase text-xs block">What We Provide</span>
                 <p className="text-slate-300 leading-relaxed">{activeModalService.whatWeProvide}</p>
               </div>
 
-              <div className="p-4 bg-black/60 border border-neutral-800 rounded-xl space-y-1">
-                <span className="text-amber-400 font-mono font-bold uppercase text-[11px] block">How It Helps</span>
+              <div className="p-5 bg-black/60 border border-neutral-800 rounded-2xl space-y-1.5">
+                <span className="text-amber-400 font-mono font-bold uppercase text-xs block">How It Helps</span>
                 <p className="text-slate-300 leading-relaxed">{activeModalService.howItHelps}</p>
               </div>
 
-              <div className="p-4 bg-black/60 border border-neutral-800 rounded-xl space-y-1">
-                <span className="text-amber-400 font-mono font-bold uppercase text-[11px] block">Business Use Cases</span>
+              <div className="p-5 bg-black/60 border border-neutral-800 rounded-2xl space-y-1.5">
+                <span className="text-amber-400 font-mono font-bold uppercase text-xs block">Business Use Cases</span>
                 <p className="text-slate-300 leading-relaxed">{activeModalService.useCases}</p>
               </div>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
-              <span className="text-xs text-slate-400">Ready to activate this capability?</span>
+            <div className="pt-6 mt-8 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
+              <span className="text-sm text-slate-400">Ready to activate this capability?</span>
               <button
                 onClick={() => {
                   setActiveModalService(null);
                   if (onContactClick) onContactClick();
                   else scrollToSection('contact-section');
                 }}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-black font-extrabold text-xs tracking-wide shadow-md hover:scale-105 transition-transform cursor-pointer"
+                className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-black font-extrabold text-sm tracking-wide shadow-md hover:scale-105 transition-transform cursor-pointer"
               >
                 Discuss This Service
               </button>
