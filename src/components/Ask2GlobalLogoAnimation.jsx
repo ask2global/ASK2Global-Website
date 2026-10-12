@@ -73,7 +73,7 @@ export default function Ask2GlobalLogoAnimation() {
               className="uppercase font-mono tracking-[0.38em]"
             >
               <textPath href="#orbitPath" startOffset="0%">
-                ASK2 GLOBAL PRIVATE LIMITED ★ ASK MORE • INNOVATE SMARTER • TRADE GLOBAL ★
+                ASK2 GLOBAL PRIVATE LIMITED ★ ASK MORE • INNOVATE SMARTER • TRADE GLOBAL ★ 
               </textPath>
             </text>
           </svg>
