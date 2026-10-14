@@ -3,18 +3,14 @@ import {
   ShieldCheck, 
   Menu, 
   X, 
-  Building2, 
-  FileText, 
-  ShoppingCart, 
-  Package, 
-  Wrench,
-  ArrowUpRight,
   UserCircle2,
   LogOut,
   MapPin,
   Mail,
   Phone,
-  Sparkles
+  Sparkles,
+  Building2,
+  Package
 } from 'lucide-react';
 import AuthModal from './auth/AuthModal';
 import useAuth from '../hooks/useAuth';
@@ -46,11 +42,13 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
   };
 
   const navLinks = [
-    { id: 'all', label: 'About Us', icon: Building2 },
-    { id: 'tenders', label: 'Tender', icon: FileText },
-    { id: 'ecommerce', label: 'E-Commerce', icon: ShoppingCart },
-    { id: 'products', label: 'Product', icon: Package },
-    { id: 'services', label: 'Service', icon: Wrench }
+    { id: 'all', label: 'About Us' },
+    { id: 'logistics', label: 'Exim' },
+    { id: 'tenders', label: 'Tender' },
+    { id: 'ecommerce', label: 'E-Commerce' },
+    { id: 'products', label: 'Product' },
+    { id: 'services', label: 'Service' },
+   
   ];
 
   const handleNavClick = (id) => {
@@ -90,29 +88,22 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
           </div>
         </button>
 
-        {/* DESKTOP NAVIGATION LINKS - INCREASED FONT SIZE (text-sm) */}
-        <nav className="hidden lg:flex items-center gap-2 xl:gap-3 text-sm font-semibold" aria-label="Main Navigation">
+        {/* DESKTOP NAVIGATION LINKS (WITHOUT ICONS) */}
+        <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 text-sm font-semibold" aria-label="Main Navigation">
           {navLinks.map((item) => {
-            const Icon = item.icon;
             const isActive = currentView === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative flex items-center gap-2.5 px-4 xl:px-5.5 py-2.5 rounded-xl transition-all duration-300 font-extrabold tracking-wider cursor-pointer border select-none ${
+                className={`relative px-4 xl:px-5.5 py-2.5 rounded-xl transition-all duration-300 font-extrabold tracking-wider cursor-pointer border select-none ${
                   isActive 
-                    ? /* GOLDEN STATE WHEN CLICKED / ACTIVE */
-                      'text-slate-950 bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 border-amber-200 shadow-[0_6px_0_#92400e,0_10px_20px_rgba(245,158,11,0.5)] translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_2px_0_#92400e]' 
-                    : /* METALLIC 3D SILVER DEFAULT STATE */
-                      'text-slate-100 bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 text-slate-950 font-black shadow-[0_5px_0_#475569,0_8px_15px_rgba(255,255,255,0.15)] hover:from-slate-100 hover:to-slate-400 hover:border-white hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_1px_0_#475569]'
+                    ? 'text-slate-950 bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 border-amber-200 shadow-[0_6px_0_#92400e,0_10px_20px_rgba(245,158,11,0.5)] translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_2px_0_#92400e]' 
+                    : 'text-slate-100 bg-gradient-to-b from-slate-200 via-slate-400 to-slate-500 border-slate-200 text-slate-950 font-black shadow-[0_5px_0_#475569,0_8px_15px_rgba(255,255,255,0.15)] hover:from-slate-100 hover:to-slate-400 hover:border-white hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_1px_0_#475569]'
                 }`}
               >
-                <Icon className={`w-4.5 h-4.5 transition-transform duration-300 ${
-                  isActive ? 'text-slate-950 scale-110' : 'text-slate-900 group-hover:scale-110'
-                }`} />
                 <span>{item.label}</span>
 
-                {/* Magical Glow Dot on Active Link */}
                 {isActive && (
                   <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-1 bg-amber-200 rounded-full blur-[2px]" />
                 )}
@@ -124,7 +115,6 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
         {/* RIGHT SIDE: VERIFIED BADGE & 3D AUTH BUTTONS */}
         <div className="hidden sm:flex items-center gap-3">
           
-          {/* VERIFIED BADGE */}
           <div className="flex items-center gap-2 text-xs font-black tracking-wider text-amber-300 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black border border-amber-500/50 px-4 py-2 rounded-xl shadow-[0_4px_0_#78350f,0_0_15px_rgba(245,158,11,0.2)]">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
@@ -136,7 +126,6 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
 
           {activeUser ? (
             <div className="flex items-center gap-2">
-              {/* 3D VENDOR PROFILE BUTTON */}
               <button
                 onClick={() => setShowVendorProfile(true)}
                 className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-b from-slate-200 via-slate-300 to-slate-400 border border-slate-100 hover:border-amber-400 px-4 py-2.5 rounded-xl transition-all shadow-[0_5px_0_#475569,0_8px_15px_rgba(0,0,0,0.6)] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_1px_0_#475569] cursor-pointer"
@@ -145,7 +134,6 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
                 <span className="capitalize">{activeUser.companyName || activeUser.role || 'Vendor'}</span>
               </button>
 
-              {/* 3D LOGOUT BUTTON */}
               <button
                 onClick={handleLogout}
                 title="Log out"
@@ -155,7 +143,6 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
               </button>
             </div>
           ) : (
-            /* 3D SILVER LOGIN BUTTON */
             <button
               onClick={() => setShowAuth(true)}
               className="relative overflow-hidden text-xs sm:text-sm font-black text-slate-950 bg-gradient-to-b from-slate-100 via-slate-300 to-slate-400 border border-white px-5 py-2.5 rounded-xl shadow-[0_6px_0_#475569,0_10px_20px_rgba(255,255,255,0.2)] hover:bg-gradient-to-r hover:from-amber-300 hover:to-amber-500 hover:border-amber-200 hover:shadow-[0_6px_0_#92400e] hover:translate-y-[-2px] active:translate-y-[2px] active:shadow-[0_2px_0_#475569] transition-all cursor-pointer group"
@@ -183,7 +170,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
         </div>
       </div>
 
-      {/* MOBILE MENU DROPDOWN */}
+      {/* MOBILE MENU DROPDOWN (WITHOUT ICONS) */}
       {mobileMenuOpen && (
         <div 
           id="mobile-navigation" 
@@ -194,7 +181,6 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
             Navigation Desk
           </div>
           {navLinks.map((item) => {
-            const Icon = item.icon;
             const isActive = currentView === item.id;
             return (
               <button
@@ -206,11 +192,7 @@ export default function Navbar({ currentView = 'all', setCurrentView }) {
                     : 'text-slate-950 bg-gradient-to-r from-slate-200 to-slate-400 border-white shadow-[0_3px_0_#475569]'
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-slate-900'}`} />
-                  <span>{item.label}</span>
-                </div>
-                <ArrowUpRight className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-slate-800'}`} />
+                <span>{item.label}</span>
               </button>
             );
           })}

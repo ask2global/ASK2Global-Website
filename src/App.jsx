@@ -6,6 +6,7 @@ import TenderTable from './components/TenderTable';
 import ProductCatalog from './components/ProductCatalog';
 import EcommercePage from './pages/EcommercePage';
 import ServicesPage from './pages/ServicesPage';
+import LogisticsPage from './pages/Logistics';
 import Footer from './components/Footer';
 
 import bgImage from './assets/bgimage.jpeg';
@@ -14,7 +15,6 @@ export default function App() {
   const [currentView, setCurrentView] = useState('all');
 
   return (
-    /* REMOVED 'overflow-x-hidden' FROM HERE TO ENABLE STICKY NAVBAR */
     <div className="relative min-h-screen w-full bg-black text-slate-100 font-sans selection:bg-amber-500 selection:text-black">
       
       {/* Full Website Fixed Background Image Layer */}
@@ -51,8 +51,17 @@ export default function App() {
               }
             }} />
           </main>
+        ) : currentView === 'logistics' ? (
+          <main className="w-full flex-grow">
+            <LogisticsPage onContactClick={() => {
+              const footerElement = document.getElementById('footer');
+              if (footerElement) {
+                footerElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }} />
+          </main>
         ) : (
-          /* Full Page View */
+          /* Full Page View (About Us / Home) */
           <main className="w-full space-y-0 flex-grow">
             <TradingoHero />
             <CompanyDetails />
